@@ -5,7 +5,7 @@ import {
   FOOTER_SCRIPT,
   HOME_HTML,
   HOME_SCRIPT,
-} from "./homeContent";
+} from "@/app/homeContent";
 
 const HOME_SCRIPTS = [HOME_SCRIPT, FOOTER_SCRIPT];
 
