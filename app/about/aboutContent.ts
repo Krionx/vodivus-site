@@ -15,6 +15,13 @@ export const ABOUT_HTML = String.raw`
     }
     #vv-about *{ box-sizing: border-box; }
     #vv-about .vv-shell{ width: var(--vv-shell); margin: 0 auto; }
+    #vv-about p,
+    #vv-about li,
+    #vv-about h1,
+    #vv-about h2,
+    #vv-about h3{
+      overflow-wrap: anywhere;
+    }
     #vv-about h1,
     #vv-about h2,
     #vv-about h3{ margin: 0; color: rgba(250,253,255,.98); }
@@ -83,6 +90,34 @@ export const ABOUT_HTML = String.raw`
       #vv-about .vv-thesis,
       #vv-about .vv-principles,
       #vv-about .vv-team{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 1280px){
+      #vv-about{ --vv-shell: min(var(--vv-max), calc(100vw - 28px)); }
+    }
+
+    @media (max-width: 1024px){
+      #vv-about{ --vv-shell: min(var(--vv-max), calc(100vw - 22px)); padding-bottom: 52px; }
+      #vv-about .vv-block{ padding: clamp(18px, 2.8vw, 26px); }
+    }
+
+    @media (max-width: 768px){
+      #vv-about{ --vv-shell: min(var(--vv-max), calc(100vw - 18px)); }
+      #vv-about .vv-cta{ width: 100%; min-height: 44px; }
+      #vv-about .vv-cta-row{ gap: 10px; }
+    }
+
+    @media (max-width: 480px){
+      #vv-about{ --vv-shell: min(var(--vv-max), calc(100vw - 14px)); }
+      #vv-about .vv-block,
+      #vv-about .vv-tile,
+      #vv-about .vv-principle,
+      #vv-about .vv-member{ border-radius: 16px; }
+      #vv-about .vv-block{ padding: 14px; }
+    }
+
+    @media (max-width: 360px){
+      #vv-about{ --vv-shell: min(var(--vv-max), calc(100vw - 10px)); }
     }
   </style>
 

@@ -15,6 +15,13 @@ export const SERVICES_HTML = String.raw`
     }
     #vv-services *{ box-sizing: border-box; }
     #vv-services .vv-shell{ width: var(--vv-shell); margin: 0 auto; }
+    #vv-services p,
+    #vv-services li,
+    #vv-services h1,
+    #vv-services h2,
+    #vv-services h3{
+      overflow-wrap: anywhere;
+    }
     #vv-services h1,
     #vv-services h2,
     #vv-services h3{ margin: 0; color: rgba(250,253,255,.98); }
@@ -91,6 +98,35 @@ export const SERVICES_HTML = String.raw`
       #vv-services .vv-lane-grid,
       #vv-services .vv-cred-grid,
       #vv-services .vv-artifacts-grid{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 1280px){
+      #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 28px)); }
+    }
+
+    @media (max-width: 1024px){
+      #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 22px)); padding-bottom: 52px; }
+      #vv-services .vv-block{ padding: clamp(18px, 2.8vw, 26px); }
+    }
+
+    @media (max-width: 768px){
+      #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 18px)); }
+      #vv-services .vv-cta{ width: 100%; min-height: 44px; }
+      #vv-services .vv-cta-row{ gap: 10px; }
+    }
+
+    @media (max-width: 480px){
+      #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 14px)); }
+      #vv-services .vv-block,
+      #vv-services .vv-lane,
+      #vv-services .vv-cred,
+      #vv-services .vv-artifact,
+      #vv-services .vv-step{ border-radius: 16px; }
+      #vv-services .vv-block{ padding: 14px; }
+    }
+
+    @media (max-width: 360px){
+      #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 10px)); }
     }
   </style>
 

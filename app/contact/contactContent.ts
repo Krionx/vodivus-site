@@ -15,6 +15,14 @@ export const CONTACT_HTML = String.raw`
     }
     #vv-contact *{ box-sizing: border-box; }
     #vv-contact .vv-shell{ width: var(--vv-shell); margin: 0 auto; }
+    #vv-contact p,
+    #vv-contact li,
+    #vv-contact h1,
+    #vv-contact h2,
+    #vv-contact h3,
+    #vv-contact label{
+      overflow-wrap: anywhere;
+    }
     #vv-contact h1,
     #vv-contact h2,
     #vv-contact h3{ margin: 0; color: rgba(250,253,255,.98); }
@@ -105,6 +113,37 @@ export const CONTACT_HTML = String.raw`
 
     @media (max-width: 980px){
       #vv-contact .vv-grid{ grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 1280px){
+      #vv-contact{ --vv-shell: min(var(--vv-max), calc(100vw - 28px)); }
+    }
+
+    @media (max-width: 1024px){
+      #vv-contact{ --vv-shell: min(var(--vv-max), calc(100vw - 22px)); padding-bottom: 52px; }
+      #vv-contact .vv-block{ padding: clamp(18px, 2.8vw, 26px); }
+    }
+
+    @media (max-width: 768px){
+      #vv-contact{ --vv-shell: min(var(--vv-max), calc(100vw - 18px)); }
+      #vv-contact .vv-submit{ width: 100%; min-height: 44px; }
+      #vv-contact .vv-field input,
+      #vv-contact .vv-field select,
+      #vv-contact .vv-field textarea{ font-size: max(16px, var(--vv-body)); }
+    }
+
+    @media (max-width: 480px){
+      #vv-contact{ --vv-shell: min(var(--vv-max), calc(100vw - 14px)); }
+      #vv-contact .vv-block,
+      #vv-contact .vv-form-card,
+      #vv-contact .vv-support-card{ border-radius: 16px; }
+      #vv-contact .vv-block,
+      #vv-contact .vv-form-card,
+      #vv-contact .vv-support-card{ padding: 14px; }
+    }
+
+    @media (max-width: 360px){
+      #vv-contact{ --vv-shell: min(var(--vv-max), calc(100vw - 10px)); }
     }
   </style>
 

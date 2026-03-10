@@ -22,6 +22,13 @@ export const HOME_HTML = String.raw`
 
 #vv-home *{ box-sizing: border-box; }
 #vv-home .vv-shell{ width: var(--vv-shell); margin: 0 auto; position: relative; z-index: 2; }
+#vv-home p,
+#vv-home li,
+#vv-home h1,
+#vv-home h2,
+#vv-home h3{
+  overflow-wrap: anywhere;
+}
 #vv-home h1,
 #vv-home h2,
 #vv-home h3{ margin: 0; color: rgba(250,253,255,.98); letter-spacing: .02em; }
@@ -201,9 +208,42 @@ export const HOME_HTML = String.raw`
   #vv-home .vv-hero-note{ text-align: left; }
 }
 
+@media (max-width: 1280px){
+  #vv-home{
+    --vv-shell: min(var(--vv-max), calc(100vw - 28px));
+  }
+}
+
+@media (max-width: 1024px){
+  #vv-home{
+    --vv-shell: min(var(--vv-max), calc(100vw - 22px));
+    padding-bottom: 70px;
+  }
+
+  #vv-home .vv-hero{
+    padding: clamp(22px, 3.5vw, 36px);
+  }
+}
+
 @media (max-width: 960px){
   #vv-home .vv-door{ display: none; }
   #vv-lanes .vv-grid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px){
+  #vv-home{
+    --vv-shell: min(var(--vv-max), calc(100vw - 18px));
+    padding-bottom: 56px;
+  }
+
+  #vv-home .vv-section{
+    margin-top: 16px;
+  }
+
+  #vv-home .vv-card,
+  #vv-home .vv-hero{
+    border-radius: 20px;
+  }
 }
 
 @media (max-width: 900px){
@@ -218,6 +258,38 @@ export const HOME_HTML = String.raw`
   #vv-soulcrest .vv-soul-btn{ width: 100%; justify-content: space-between; font-size: 20px; }
   #vv-soulcrest .vv-soul-btn::after{ content: "Tap to expand"; }
   #vv-soulcrest .vv-soul-collapse{ font-size: 15px; }
+}
+
+@media (max-width: 480px){
+  #vv-home{
+    --vv-shell: min(var(--vv-max), calc(100vw - 14px));
+    padding-bottom: 46px;
+  }
+
+  #vv-home .vv-hero,
+  #vv-home .vv-card{
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  #vv-home .vv-cta,
+  #vv-home .vv-soul-btn,
+  #vv-home .vv-soul-collapse{
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 360px){
+  #vv-home{
+    --vv-shell: min(var(--vv-max), calc(100vw - 10px));
+  }
+
+  #vv-home .vv-hero,
+  #vv-home .vv-card{
+    border-radius: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 </style>
 

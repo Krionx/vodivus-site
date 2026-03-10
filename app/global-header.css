@@ -67,6 +67,7 @@ html body #vv-overlay {
   color: rgba(255, 255, 255, 0.72);
   text-decoration: none;
   padding: 10px 14px;
+  min-height: 44px;
   border-radius: 12px;
 }
 
@@ -81,6 +82,7 @@ html body #vv-overlay {
   font-size: 20px;
   font-weight: 600;
   padding: 12px 18px;
+  min-height: 44px;
   border-radius: 14px;
   border: 1px solid rgba(100, 155, 255, 0.28);
   color: rgba(255, 255, 255, 0.94);
@@ -213,6 +215,7 @@ html body #vv-overlay {
   color: rgba(255, 255, 255, 0.92);
   text-decoration: none;
   padding: 14px 12px;
+  min-height: 44px;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -238,6 +241,26 @@ html body #vv-overlay {
   padding-top: 250px;
 }
 
+@media (max-width: 1280px) {
+  #vv-global-header {
+    width: min(1200px, calc(100vw - 48px));
+  }
+
+  .vv-global-header-gap-118 {
+    padding-top: 220px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #vv-global-header {
+    width: min(1200px, calc(100vw - 40px));
+  }
+
+  .vv-global-header-gap-118 {
+    padding-top: 190px;
+  }
+}
+
 @media (max-width: 900px) {
   #vv-global-header {
     width: calc(100% - 48px);
@@ -259,5 +282,55 @@ html body #vv-overlay {
   .vv-global-header-inner {
     padding: 12px 14px;
     min-height: 64px;
+  }
+
+  .vv-global-header-gap-118 {
+    padding-top: 154px;
+  }
+}
+
+@media (max-width: 768px) {
+  #vv-global-header {
+    width: calc(100% - 28px);
+  }
+
+  .vv-global-header-gap-118 {
+    padding-top: 136px;
+  }
+}
+
+@media (max-width: 480px) {
+  #vv-global-header {
+    width: calc(100% - 22px);
+    top: calc(12px + env(safe-area-inset-top));
+  }
+
+  .vv-global-header-inner {
+    padding: 10px 12px;
+    min-height: 58px;
+  }
+
+  .vv-global-logo {
+    height: 40px;
+  }
+
+  .vv-global-header-gap-118 {
+    padding-top: 124px;
+  }
+}
+
+@media (max-width: 360px) {
+  .vv-global-mobile {
+    left: 6px;
+    right: 6px;
+    padding: 12px;
+  }
+
+  .vv-global-mobile a {
+    padding: 12px 10px;
+  }
+
+  .vv-global-header-gap-118 {
+    padding-top: 118px;
   }
 }
