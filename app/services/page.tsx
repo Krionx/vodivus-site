@@ -6,7 +6,7 @@ import {
   FOOTER_SCRIPT,
   SERVICES_HTML,
   SERVICES_MODAL_SCRIPT,
-} from "@/app/services/servicesContent";
+} from "./servicesContent";
 
 const SERVICES_SCRIPTS = [SERVICES_MODAL_SCRIPT, FOOTER_SCRIPT];
 

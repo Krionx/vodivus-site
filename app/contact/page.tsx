@@ -5,7 +5,7 @@ import {
   CONTACT_HTML,
   CONTACT_SCRIPT,
   FOOTER_SCRIPT,
-} from "@/app/contact/contactContent";
+} from "./contactContent";
 
 const CONTACT_SCRIPTS = [CONTACT_SCRIPT, FOOTER_SCRIPT];
 

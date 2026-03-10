@@ -5,9 +5,9 @@ export const ABOUT_HTML = String.raw`
       --vv-max: 1200px;
       --vv-shell: min(var(--vv-max), calc(100vw - 32px));
       --vv-title: clamp(36px, 5.1vw, 64px);
-      --vv-h2: clamp(28px, 3.5vw, 44px);
-      --vv-h3: clamp(21px, 2.4vw, 30px);
-      --vv-body: clamp(20px, 1.7vw, 24px);
+      --vv-h2: clamp(28px, 3.4vw, 44px);
+      --vv-h3: clamp(21px, 2.2vw, 30px);
+      --vv-body: clamp(18px, 1.3vw, 23px);
       --vv-border: rgba(123,183,235,.44);
       --vv-glass: rgba(8, 14, 28, .62);
       color: rgba(242,248,255,.96);
@@ -18,13 +18,14 @@ export const ABOUT_HTML = String.raw`
     #vv-about h1,
     #vv-about h2,
     #vv-about h3{ margin: 0; color: rgba(250,253,255,.98); }
-    #vv-about h1{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-title); line-height: 1.06; text-shadow: 0 0 18px rgba(112,190,255,.2); }
+    #vv-about h1{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-title); line-height: 1.05; text-shadow: 0 0 18px rgba(112,190,255,.2); }
     #vv-about h2{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-h2); line-height: 1.1; }
     #vv-about h3{ font-family: "Cinzel", serif; font-size: var(--vv-h3); line-height: 1.14; }
     #vv-about p,
     #vv-about li,
     #vv-about a,
-    #vv-about span{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-body); line-height: 1.45; }
+    #vv-about span,
+    #vv-about b{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-body); line-height: 1.42; }
     #vv-about p{ margin: 0; color: rgba(232,243,255,.9); }
 
     #vv-about .vv-block{
@@ -39,16 +40,20 @@ export const ABOUT_HTML = String.raw`
     }
     #vv-about .vv-block + .vv-block{ margin-top: 18px; }
 
-    #vv-about .vv-hero-copy{ max-width: 24ch; }
+    #vv-about .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: clamp(14px, .95vw, 16px); color: rgba(193,224,251,.78); }
+    #vv-about .vv-hero-copy{ max-width: 22ch; margin-top: 10px; }
     #vv-about .vv-hero-sub{ max-width: 66ch; margin-top: 14px; }
 
     #vv-about .vv-grid{ display: grid; gap: 14px; }
+    #vv-about .vv-thesis{ grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 16px; }
     #vv-about .vv-principles{ grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
-    #vv-about .vv-principle{ border-radius: 18px; border: 1px solid rgba(120,170,220,.38); background: rgba(255,255,255,.04); padding: 14px; }
-
     #vv-about .vv-team{ grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
+
+    #vv-about .vv-tile,
+    #vv-about .vv-principle,
     #vv-about .vv-member{ border-radius: 18px; border: 1px solid rgba(120,170,220,.38); background: rgba(255,255,255,.04); padding: 14px; }
-    #vv-about .vv-member em{ display: block; font-size: clamp(17px, 1.8vw, 20px); color: rgba(197,228,255,.86); margin-bottom: 4px; }
+
+    #vv-about .vv-member em{ display: block; color: rgba(197,228,255,.86); margin-bottom: 4px; }
 
     #vv-about .vv-cta-row{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
     #vv-about .vv-cta{
@@ -75,6 +80,7 @@ export const ABOUT_HTML = String.raw`
     }
 
     @media (max-width: 980px){
+      #vv-about .vv-thesis,
       #vv-about .vv-principles,
       #vv-about .vv-team{ grid-template-columns: 1fr; }
     }
@@ -82,54 +88,64 @@ export const ABOUT_HTML = String.raw`
 
   <div class="vv-shell">
     <section class="vv-block" aria-label="About hero">
-      <h1 class="vv-hero-copy">We Build Venture Architecture That Holds Under Pressure.</h1>
-      <p class="vv-hero-sub">Vodivus exists for founders and operators who need strategic clarity, operational integrity, and identity coherence, not abstract advice disconnected from execution.</p>
+      <p class="vv-kicker">Philosophical Depth</p>
+      <h1 class="vv-hero-copy">We Treat Ventures as Living Systems, Not Static Brands.</h1>
+      <p class="vv-hero-sub">Vodivus is built on a simple conviction: strategy, operations, and identity are one organism. If they evolve independently, the venture fragments. If they move together, momentum compounds.</p>
     </section>
 
-    <section class="vv-block" aria-label="Mission">
-      <h2>Mission</h2>
-      <p style="margin-top: 10px;">Our mission is to convert ambitious vision into structured systems that teams can actually run. We focus on momentum that compounds through clarity, discipline, and precision.</p>
+    <section class="vv-block" aria-label="Core thesis">
+      <h2>Our Thesis</h2>
+      <div class="vv-grid vv-thesis">
+        <article class="vv-tile">
+          <h3>Clarity Is Ethical</h3>
+          <p>When leadership is unclear, teams absorb the cost through confusion, rework, and avoidable stress. Structural clarity is not cosmetic. It is a responsibility.</p>
+        </article>
+        <article class="vv-tile">
+          <h3>Execution Reveals Truth</h3>
+          <p>Ideas feel coherent in theory. Reality exposes contradictions. We design for contact with reality, not protection from it.</p>
+        </article>
+      </div>
     </section>
 
-    <section class="vv-block" aria-label="Principles">
-      <h2>Operating Principles</h2>
+    <section class="vv-block" aria-label="Operating philosophy">
+      <h2>Operating Philosophy</h2>
       <div class="vv-grid vv-principles">
         <article class="vv-principle">
-          <h3>Reality First</h3>
-          <p>Strategy is only valid when it survives constraints, pressure, and real-world complexity.</p>
+          <h3>Depth Over Velocity Theater</h3>
+          <p>Fast is useful only when direction is valid. We prioritize directional integrity before acceleration.</p>
         </article>
         <article class="vv-principle">
-          <h3>Systems Over Noise</h3>
-          <p>We replace improvisation with intentional systems that scale with less friction and less waste.</p>
+          <h3>Systems Over Personality</h3>
+          <p>A venture cannot depend on individual heroics. Durable systems protect both performance and people.</p>
         </article>
         <article class="vv-principle">
-          <h3>Identity With Precision</h3>
-          <p>Brand and operations should signal the same standard. Your presence must match your execution quality.</p>
+          <h3>Identity as Behavior</h3>
+          <p>Brand is not a visual layer; it is how your operation behaves under pressure when no script survives intact.</p>
         </article>
       </div>
     </section>
 
     <section class="vv-block" aria-label="Team">
-      <h2>The Studio Team</h2>
+      <h2>The Studio Lens</h2>
       <div class="vv-grid vv-team">
         <article class="vv-member">
-          <em>Strategic Architecture Lead</em>
-          <p>Translates raw ambition into structured positioning and executable growth pathways.</p>
+          <em>Strategic Architecture</em>
+          <p>Converts ambition into coherent strategic structures with decision boundaries that hold over time.</p>
         </article>
         <article class="vv-member">
-          <em>Operations Design Lead</em>
-          <p>Builds the systems, workflows, and decision logic that keep execution calm and consistent.</p>
+          <em>Operational Design</em>
+          <p>Builds execution frameworks where accountability, escalation, and delivery rhythm are structurally explicit.</p>
         </article>
         <article class="vv-member">
-          <em>Identity and Experience Lead</em>
-          <p>Aligns visual language, communication behavior, and experiential standards into one coherent signature.</p>
+          <em>Identity Systems</em>
+          <p>Aligns expression and operation so what you communicate and what you deliver stop contradicting each other.</p>
         </article>
       </div>
     </section>
 
     <section class="vv-block" aria-label="About call to action">
-      <h2>If You Are Ready for a Clear Build Path</h2>
-      <p style="margin-top:10px; max-width: 58ch;">Start with intake and we will map the correct lane, define scope boundaries, and outline immediate next actions.</p>
+      <h2>If This Philosophy Matches How You Want to Build</h2>
+      <p style="margin-top:10px; max-width: 58ch;">Start intake. We will map the right lane, clarify scope, and outline the first structural moves for your next phase.</p>
       <div class="vv-cta-row">
         <a href="/contact" class="vv-cta vv-cta-primary">Build the Blueprint -></a>
         <a href="/services" class="vv-cta vv-cta-ghost">Review Service Lanes -></a>

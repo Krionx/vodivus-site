@@ -5,7 +5,7 @@ import {
   ABOUT_HTML,
   ABOUT_TEAM_SCRIPT,
   FOOTER_SCRIPT,
-} from "@/app/about/aboutContent";
+} from "./aboutContent";
 
 const ABOUT_SCRIPTS = [ABOUT_TEAM_SCRIPT, FOOTER_SCRIPT];
 

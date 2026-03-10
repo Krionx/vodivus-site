@@ -5,16 +5,17 @@ export const HOME_HTML = String.raw`
 #vv-home{
   --vv-max: 1200px;
   --vv-shell: min(var(--vv-max), calc(100vw - 36px));
-  --vv-title: clamp(40px, 6.4vw, 78px);
-  --vv-h2: clamp(30px, 4.1vw, 50px);
-  --vv-h3: clamp(22px, 2.5vw, 30px);
-  --vv-body: clamp(20px, 1.9vw, 26px);
+  --vv-title: clamp(46px, 6.1vw, 82px);
+  --vv-h2: clamp(30px, 3.6vw, 52px);
+  --vv-h3: clamp(22px, 2.1vw, 32px);
+  --vv-body: clamp(18px, 1.35vw, 23px);
+  --vv-body-sm: clamp(15px, 1.05vw, 18px);
   --vv-muted: rgba(235,244,255,.76);
   --vv-border: rgba(120,170,220,.42);
   --vv-glass: rgba(7,12,24,.56);
   position: relative;
   isolation: isolate;
-  padding: clamp(120px, 15vw, 156px) 0 64px;
+  padding: clamp(132px, 14vw, 170px) 0 86px;
   color: rgba(245,250,255,.96);
   overflow-x: clip;
 }
@@ -24,9 +25,9 @@ export const HOME_HTML = String.raw`
 #vv-home h1,
 #vv-home h2,
 #vv-home h3{ margin: 0; color: rgba(250,253,255,.98); letter-spacing: .02em; }
-#vv-home h1{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-title); line-height: 1.04; text-shadow: 0 0 24px rgba(112,190,255,.24); }
-#vv-home h2{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-h2); line-height: 1.08; text-shadow: 0 0 18px rgba(112,190,255,.18); }
-#vv-home h3{ font-family: "Cinzel", serif; font-size: var(--vv-h3); line-height: 1.12; }
+#vv-home h1{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-title); line-height: 1.02; font-weight: 700; text-shadow: 0 0 24px rgba(112,190,255,.24); }
+#vv-home h2{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-h2); line-height: 1.08; font-weight: 700; text-shadow: 0 0 18px rgba(112,190,255,.18); }
+#vv-home h3{ font-family: "Cinzel", serif; font-size: var(--vv-h3); line-height: 1.12; font-weight: 600; }
 #vv-home p,
 #vv-home li,
 #vv-home span,
@@ -49,6 +50,16 @@ export const HOME_HTML = String.raw`
     radial-gradient(2px 2px at 24% 66%, rgba(210,236,255,.46), transparent 70%),
     radial-gradient(2px 2px at 84% 72%, rgba(210,236,255,.54), transparent 70%);
   opacity: .62;
+}
+#vv-home::after{
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(1200px 760px at 50% 18%, rgba(6,14,30,.42), transparent 62%),
+    linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.38));
 }
 
 #vv-home .vv-door{
@@ -78,8 +89,12 @@ export const HOME_HTML = String.raw`
 
 #vv-home .vv-hero{
   border-radius: 26px;
-  padding: clamp(24px, 4vw, 42px);
+  padding: clamp(26px, 4vw, 48px);
   border: 1px solid rgba(125,188,240,.42);
+  display: grid;
+  grid-template-columns: 1.15fr auto;
+  gap: 18px;
+  align-items: end;
   background:
     radial-gradient(720px 460px at -6% 96%, rgba(9,31,62,1), transparent 60%),
     radial-gradient(520px 360px at 100% 0%, rgba(235,193,118,.26), transparent 62%),
@@ -87,9 +102,12 @@ export const HOME_HTML = String.raw`
     var(--vv-glass);
   box-shadow: 0 28px 84px rgba(0,0,0,.58), inset 0 1px 0 rgba(255,255,255,.12);
 }
-#vv-home .vv-hero-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: 15px; color: rgba(196,227,255,.72); }
-#vv-home .vv-hero-copy{ max-width: 22ch; margin: 16px 0 14px; }
+#vv-home .vv-hero-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: var(--vv-body-sm); color: rgba(196,227,255,.72); }
+#vv-home .vv-hero-main{ min-width: 0; }
+#vv-home .vv-hero-copy{ max-width: 20ch; margin: 12px 0 12px; }
 #vv-home .vv-hero-sub{ max-width: 54ch; }
+#vv-home .vv-hero-side{ display: grid; gap: 10px; justify-items: end; align-self: end; }
+#vv-home .vv-hero-note{ font-size: var(--vv-body-sm); color: rgba(198,226,251,.8); text-align: right; }
 
 #vv-home .vv-cta-row{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
 #vv-home .vv-cta{
@@ -106,7 +124,8 @@ export const HOME_HTML = String.raw`
   border: 1px solid rgba(123,198,255,.52);
   background: linear-gradient(rgba(0,0,0,0) 8%, rgba(92,154,230,.68) 88%);
   color: rgba(255,255,255,.96);
-  box-shadow: 0 10px 28px rgba(64,127,212,.34);
+  box-shadow: 0 14px 34px rgba(64,127,212,.4);
+  min-width: 230px;
 }
 #vv-home .vv-cta-ghost{
   border: 1px solid rgba(240,246,255,.18);
@@ -116,7 +135,7 @@ export const HOME_HTML = String.raw`
 #vv-home .vv-cta:hover{ transform: translateY(-2px); }
 #vv-home .vv-cta-primary:hover{ box-shadow: 0 14px 34px rgba(64,127,212,.5); }
 
-#vv-home .vv-section{ margin-top: 24px; }
+#vv-home .vv-section{ margin-top: 30px; }
 #vv-home .vv-card{
   border-radius: 22px;
   border: 1px solid var(--vv-border);
@@ -176,12 +195,22 @@ export const HOME_HTML = String.raw`
   50%{ opacity: .8; transform: scale(1.08); }
 }
 
+@media (max-width: 1120px){
+  #vv-home .vv-hero{ grid-template-columns: 1fr; }
+  #vv-home .vv-hero-side{ justify-items: start; }
+  #vv-home .vv-hero-note{ text-align: left; }
+}
+
 @media (max-width: 960px){
   #vv-home .vv-door{ display: none; }
   #vv-lanes .vv-grid{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 900px){
+  #vv-home{ padding-top: clamp(120px, 15vw, 150px); }
+  #vv-home .vv-section{ margin-top: 20px; }
+  #vv-home .vv-cta-row{ gap: 10px; }
+  #vv-home .vv-cta{ width: 100%; }
   #vv-lanes .vv-lane::after{ content: "Tap to expand"; }
   #vv-lanes .vv-lane.is-open::after{ content: "Tap to collapse"; }
   #vv-pressure .vv-preview::after{ content: "Tap to expand"; }
@@ -199,12 +228,17 @@ export const HOME_HTML = String.raw`
 
   <div class="vv-shell">
     <section class="vv-hero" aria-label="Hero">
-      <p class="vv-hero-kicker">Venture Architecture Studio</p>
-      <h1 class="vv-hero-copy">Dream Boldly. Build Intentionally.</h1>
-      <p class="vv-hero-sub">Vodivus turns ambitious ideas into executable systems through clear positioning, resilient operations, and identity architecture that survives reality.</p>
-      <div class="vv-cta-row" aria-label="Primary actions">
-        <a href="/contact" class="vv-cta vv-cta-primary">Build the Blueprint -></a>
-        <a href="/services" class="vv-cta vv-cta-ghost">Explore Service Paths -></a>
+      <div class="vv-hero-main">
+        <p class="vv-hero-kicker">Venture Architecture Studio</p>
+        <h1 class="vv-hero-copy">Dream Boldly. Build Intentionally.</h1>
+        <p class="vv-hero-sub">Vodivus turns ambitious ideas into executable systems through clear positioning, resilient operations, and identity architecture that survives reality.</p>
+      </div>
+      <div class="vv-hero-side">
+        <div class="vv-cta-row" aria-label="Primary actions">
+          <a href="/contact" class="vv-cta vv-cta-primary">Build the Blueprint -></a>
+          <a href="/services" class="vv-cta vv-cta-ghost">Explore Service Paths -></a>
+        </div>
+        <p class="vv-hero-note">Reviewed within 24-72 hours • Scope-first guidance</p>
       </div>
     </section>
 
