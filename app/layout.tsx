@@ -38,9 +38,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <GlobalVvHeader />
-        <main id="vv-main-shell">{children}</main>
-        <Footer />
+        <div className="vodivus-site-shell">
+          <GlobalVvHeader />
+          <main id="vv-main-shell">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
