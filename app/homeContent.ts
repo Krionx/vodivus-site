@@ -15,13 +15,14 @@ export const HOME_HTML = String.raw`
   --vv-glass: rgba(7,12,24,.56);
   position: relative;
   isolation: isolate;
-  padding: clamp(132px, 14vw, 170px) 0 86px;
+  padding: 118px 0 86px;
   color: rgba(245,250,255,.96);
   overflow-x: clip;
 }
 
 #vv-home *{ box-sizing: border-box; }
 #vv-home .vv-shell{ width: var(--vv-shell); margin: 0 auto; position: relative; z-index: 2; }
+#vv-home .vv-hero-spacer{ height: 118px; }
 #vv-home p,
 #vv-home li,
 #vv-home h1,
@@ -110,11 +111,11 @@ export const HOME_HTML = String.raw`
   box-shadow: 0 28px 84px rgba(0,0,0,.58), inset 0 1px 0 rgba(255,255,255,.12);
 }
 #vv-home .vv-hero-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: var(--vv-body-sm); color: rgba(196,227,255,.72); }
-#vv-home .vv-hero-main{ min-width: 0; }
-#vv-home .vv-hero-copy{ max-width: 20ch; margin: 12px 0 12px; }
-#vv-home .vv-hero-sub{ max-width: 54ch; }
-#vv-home .vv-hero-side{ display: grid; gap: 10px; justify-items: end; align-self: end; }
-#vv-home .vv-hero-note{ font-size: var(--vv-body-sm); color: rgba(198,226,251,.8); text-align: right; }
+#vv-home .vv-hero-main{ min-width: 0; grid-column: 1 / -1; }
+#vv-home .vv-hero-copy{ max-width: none; width: 100%; margin: 12px auto; text-align: center; }
+#vv-home .vv-hero-sub{ max-width: 50ch; }
+#vv-home .vv-hero-side{ display: grid; gap: 10px; justify-items: end; align-self: end; margin-top: -156px; }
+#vv-home .vv-hero-note{ font-size: var(--vv-body-sm); color: rgba(198,226,251,.8); text-align: right; max-width: 50ch; }
 
 #vv-home .vv-cta-row{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
 #vv-home .vv-cta{
@@ -153,6 +154,7 @@ export const HOME_HTML = String.raw`
 }
 
 #vv-lanes .vv-grid{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+#vv-lanes{ padding: 26px 24px; }
 #vv-lanes .vv-lane{ padding: 20px 18px; cursor: pointer; transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
 #vv-lanes .vv-lane:hover{ transform: translateY(-2px); border-color: rgba(147,210,255,.75); box-shadow: 0 22px 68px rgba(0,0,0,.66), 0 0 28px rgba(110,194,255,.2); }
 #vv-lanes .vv-lane:focus-visible{ outline: none; border-color: rgba(173,222,255,.95); box-shadow: 0 0 0 2px rgba(173,222,255,.38), 0 0 34px rgba(110,194,255,.24); }
@@ -169,9 +171,31 @@ export const HOME_HTML = String.raw`
 #vv-pressure .vv-preview::after{ content: "Click to expand"; display: table; margin: 12px auto 0; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.62); font-size: 16px; color: rgba(224,242,255,.9); }
 #vv-pressure.is-open .vv-more{ max-height: 460px; opacity: 1; transform: translateY(0); margin-top: 12px; }
 #vv-pressure.is-open .vv-preview::after{ content: "Click to collapse"; }
-#vv-pressure ul{ margin: 10px 0 0 18px; padding: 0; }
+#vv-pressure h2,
+#vv-pressure .vv-preview > p,
+#vv-pressure .vv-more > p{ text-align: center; }
+#vv-pressure .vv-preview > p,
+#vv-pressure .vv-more > p{ max-width: 60ch; margin-left: auto; margin-right: auto; }
+#vv-pressure ul{
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+#vv-pressure li{
+  border: 1px solid rgba(155,208,255,.34);
+  border-radius: 14px;
+  background: rgba(8,16,34,.58);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+  padding: 11px 12px;
+  text-align: center;
+}
 
-#vv-soulcrest{ padding: 26px 24px; }
+#vv-soulcrest{ padding: 26px 24px; position: relative; padding-top: 76px; }
+#vv-soulcrest h2{ position: absolute; top: 22px; right: 24px; text-align: right; }
+#vv-soulcrest .vv-muted{ position: absolute; top: 28px; left: 24px; margin-top: 0 !important; }
 #vv-soulcrest .vv-soul-btn{
   width: fit-content;
   max-width: 100%;
@@ -194,8 +218,12 @@ export const HOME_HTML = String.raw`
 #vv-soulcrest .vv-soul-collapse{ display: none; margin: 12px auto 0; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.62); color: rgba(224,242,255,.9); font-size: 16px; cursor: pointer; }
 #vv-soulcrest.is-open .vv-soul-btn{ display: none; }
 #vv-soulcrest.is-open .vv-soul-panel{ max-height: 600px; opacity: 1; transform: translateY(0); margin-top: 16px; }
+#vv-soulcrest.is-open .vv-soul-panel p{ text-align: center; max-width: 60ch; margin-left: auto; margin-right: auto; }
 #vv-soulcrest.is-open .vv-soul-collapse{ display: block; }
-#vv-soulcrest .vv-phase{ margin-top: 28px; }
+#vv-soulcrest .vv-phase{ margin-top: 28px; margin-left: 10%; }
+#vv-soulcrest .vv-cta-row{ width: 100%; justify-content: space-between; align-items: flex-end; margin-top: 20px; }
+#vv-soulcrest .vv-cta-row .vv-cta:nth-child(1){ order: 2; margin-left: auto; }
+#vv-soulcrest .vv-cta-row .vv-cta:nth-child(2){ order: 1; margin-right: auto; }
 
 @keyframes vv-door-haze{
   0%,100%{ opacity: .44; transform: scale(1); }
@@ -204,7 +232,7 @@ export const HOME_HTML = String.raw`
 
 @media (max-width: 1120px){
   #vv-home .vv-hero{ grid-template-columns: 1fr; }
-  #vv-home .vv-hero-side{ justify-items: start; }
+  #vv-home .vv-hero-side{ justify-items: start; margin-top: 0; }
   #vv-home .vv-hero-note{ text-align: left; }
 }
 
@@ -247,7 +275,7 @@ export const HOME_HTML = String.raw`
 }
 
 @media (max-width: 900px){
-  #vv-home{ padding-top: clamp(120px, 15vw, 150px); }
+  #vv-home{ padding-top: 118px; }
   #vv-home .vv-section{ margin-top: 20px; }
   #vv-home .vv-cta-row{ gap: 10px; }
   #vv-home .vv-cta{ width: 100%; }
@@ -255,9 +283,16 @@ export const HOME_HTML = String.raw`
   #vv-lanes .vv-lane.is-open::after{ content: "Tap to collapse"; }
   #vv-pressure .vv-preview::after{ content: "Tap to expand"; }
   #vv-pressure.is-open .vv-preview::after{ content: "Tap to collapse"; }
+  #vv-pressure ul{ grid-template-columns: 1fr; }
+  #vv-soulcrest{ padding-top: 86px; }
+  #vv-soulcrest h2{ top: 24px; right: 16px; }
+  #vv-soulcrest .vv-muted{ top: 30px; left: 16px; }
   #vv-soulcrest .vv-soul-btn{ width: 100%; justify-content: space-between; font-size: 20px; }
   #vv-soulcrest .vv-soul-btn::after{ content: "Tap to expand"; }
   #vv-soulcrest .vv-soul-collapse{ font-size: 15px; }
+  #vv-soulcrest .vv-phase{ margin-left: 0; text-align: center; }
+  #vv-soulcrest .vv-cta-row .vv-cta:nth-child(1),
+  #vv-soulcrest .vv-cta-row .vv-cta:nth-child(2){ order: initial; margin: 0; }
 }
 
 @media (max-width: 480px){
@@ -299,6 +334,7 @@ export const HOME_HTML = String.raw`
   </div>
 
   <div class="vv-shell">
+    <div class="vv-hero-spacer" aria-hidden="true"></div>
     <section class="vv-hero" aria-label="Hero">
       <div class="vv-hero-main">
         <p class="vv-hero-kicker">Venture Architecture Studio</p>
@@ -314,7 +350,7 @@ export const HOME_HTML = String.raw`
       </div>
     </section>
 
-    <section id="vv-lanes" class="vv-section" aria-label="Structured build paths">
+    <section id="vv-lanes" class="vv-section vv-card" aria-label="Structured build paths">
       <h2>Structured Build Paths</h2>
       <p class="vv-muted" style="margin-top:8px; margin-bottom:14px;">Choose the architecture lane that removes your current bottleneck.</p>
       <div class="vv-grid">
