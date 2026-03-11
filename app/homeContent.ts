@@ -428,6 +428,10 @@ export const HOME_SCRIPT = `(function () {
   const root = document.getElementById("vv-home");
   if (!root) return;
 
+  const isInteractiveTarget = (target) => {
+    return target instanceof Element && !!target.closest("a, button");
+  };
+
   const lanes = root.querySelectorAll("#vv-lanes .vv-lane");
   lanes.forEach((lane) => {
     lane.setAttribute("tabindex", "0");
@@ -440,7 +444,7 @@ export const HOME_SCRIPT = `(function () {
     };
 
     lane.addEventListener("click", (e) => {
-      if (e.target && e.target.closest("a, button")) return;
+      if (isInteractiveTarget(e.target)) return;
       toggle();
     });
 
@@ -464,7 +468,7 @@ export const HOME_SCRIPT = `(function () {
     };
 
     pressure.addEventListener("click", (e) => {
-      if (e.target && e.target.closest("a, button")) return;
+      if (isInteractiveTarget(e.target)) return;
       togglePressure();
     });
 

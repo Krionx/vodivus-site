@@ -98,9 +98,10 @@
 
 #vv-services .vv-artifacts-grid{
   align-items: start;
-  gap: 14px;
-  margin-top: 0;
+  gap: clamp(28px, 4vw, 56px);
+  margin-top: 8px;
   justify-items: center;
+  padding: 4px clamp(8px, 1.8vw, 24px);
 }
 #vv-services .vv-artifacts-shard{
   margin-top: 18px;
@@ -116,10 +117,10 @@
 }
 #vv-services .vv-artifacts-grid .vv-artifact{
   position: relative;
-  width: min(100%, 340px);
+  width: min(100%, 420px);
   display: grid;
   justify-items: center;
-  padding: 8px;
+  padding: 14px 10px;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -140,6 +141,7 @@
   position: relative;
   width: clamp(134px, 11.52vw, 173px);
   aspect-ratio: 1 / 1;
+  margin: 28px 0 34px;
   border-radius: 50%;
   border: 0;
   outline: 0;
