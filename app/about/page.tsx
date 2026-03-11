@@ -11,7 +11,7 @@ const ABOUT_SCRIPTS = [ABOUT_TEAM_SCRIPT, FOOTER_SCRIPT];
 
 export default function AboutPage() {
   return (
-    <div className="vv-global-header-gap-118">
+    <div>
       <InjectedContentPage html={ABOUT_HTML} scripts={ABOUT_SCRIPTS} />
     </div>
   );

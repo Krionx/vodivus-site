@@ -11,10 +11,26 @@ export const ABOUT_HTML = String.raw`
       --vv-border: rgba(123,183,235,.44);
       --vv-glass: rgba(8, 14, 28, .62);
       color: rgba(242,248,255,.96);
-      padding: clamp(28px, 4vw, 46px) 0 60px;
+      padding: 0 0 60px;
     }
     #vv-about *{ box-sizing: border-box; }
     #vv-about .vv-shell{ width: var(--vv-shell); margin: 0 auto; }
+    #vv-about .vv-hero-spacer{
+      height: 118px;
+      margin-top: calc(18px + env(safe-area-inset-top) + 94px);
+    }
+
+    @media (max-width: 900px){
+      #vv-about .vv-hero-spacer{
+        margin-top: calc(18px + env(safe-area-inset-top) + 84px);
+      }
+    }
+
+    @media (max-width: 480px){
+      #vv-about .vv-hero-spacer{
+        margin-top: calc(12px + env(safe-area-inset-top) + 78px);
+      }
+    }
     #vv-about p,
     #vv-about li,
     #vv-about h1,
@@ -122,6 +138,7 @@ export const ABOUT_HTML = String.raw`
   </style>
 
   <div class="vv-shell">
+    <div class="vv-hero-spacer" aria-hidden="true"></div>
     <section class="vv-block" aria-label="About hero">
       <p class="vv-kicker">Philosophical Depth</p>
       <h1 class="vv-hero-copy">We Treat Ventures as Living Systems, Not Static Brands.</h1>
