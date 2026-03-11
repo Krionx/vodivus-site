@@ -172,24 +172,6 @@ export default function ServicesPage() {
             </div>
           </section>
 
-          <section className="vv-block vv-process" aria-label="Service process">
-            <h2>Engagement Model</h2>
-            <div className="vv-steps">
-              <article className="vv-step">
-                <b>Step 01: Intake and pressure mapping</b>
-                <span>We identify constraint patterns, recurring failure points, and practical scope for the first build cycle.</span>
-              </article>
-              <article className="vv-step">
-                <b>Step 02: Architecture and validation</b>
-                <span>We define the model, then pressure-test it against real staffing, timing, and operational conditions.</span>
-              </article>
-              <article className="vv-step">
-                <b>Step 03: Deployment and handoff</b>
-                <span>You receive implementation-ready assets and leadership guidance to run the system with stability.</span>
-              </article>
-            </div>
-          </section>
-
           <section className="vv-block vv-final-cta" aria-label="Services call to action">
             <h2>Start With the Right Structural Move</h2>
             <p>Submit intake and we will recommend the correct lane, define immediate priorities, and outline a build path grounded in operational reality.</p>
