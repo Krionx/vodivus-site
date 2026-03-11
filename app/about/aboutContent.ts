@@ -17,18 +17,18 @@ export const ABOUT_HTML = String.raw`
     #vv-about .vv-shell{ width: var(--vv-shell); margin: 0 auto; }
     #vv-about .vv-hero-spacer{
       height: 118px;
-      margin-top: calc(18px + env(safe-area-inset-top) + 94px);
+      margin-top: calc(18px + env(safe-area-inset-top) + 100px);
     }
 
     @media (max-width: 900px){
       #vv-about .vv-hero-spacer{
-        margin-top: calc(18px + env(safe-area-inset-top) + 84px);
+        margin-top: calc(18px + env(safe-area-inset-top) + 90px);
       }
     }
 
     @media (max-width: 480px){
       #vv-about .vv-hero-spacer{
-        margin-top: calc(12px + env(safe-area-inset-top) + 78px);
+        margin-top: calc(12px + env(safe-area-inset-top) + 84px);
       }
     }
     #vv-about p,
@@ -64,19 +64,83 @@ export const ABOUT_HTML = String.raw`
     #vv-about .vv-block + .vv-block{ margin-top: 18px; }
 
     #vv-about .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: clamp(14px, .95vw, 16px); color: rgba(193,224,251,.78); }
-    #vv-about .vv-hero-copy{ max-width: 22ch; margin-top: 10px; }
-    #vv-about .vv-hero-sub{ max-width: 66ch; margin-top: 14px; }
+    #vv-about .vv-hero-copy{ max-width: none; width: 100%; margin: 10px auto 0; text-align: center; }
+    #vv-about .vv-hero-sub{ max-width: 60ch; margin: 14px auto 0; text-align: center; }
 
     #vv-about .vv-grid{ display: grid; gap: 14px; }
     #vv-about .vv-thesis{ grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 16px; }
     #vv-about .vv-principles{ grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
-    #vv-about .vv-team{ grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
+    #vv-about .vv-team-carousel{ margin-top: 16px; }
+    #vv-about .vv-team-viewport{ overflow: hidden; border-radius: 18px; }
+    #vv-about .vv-team-track{ display: flex; transition: transform .34s ease; will-change: transform; }
 
     #vv-about .vv-tile,
     #vv-about .vv-principle,
     #vv-about .vv-member{ border-radius: 18px; border: 1px solid rgba(120,170,220,.38); background: rgba(255,255,255,.04); padding: 14px; }
 
+    #vv-about .vv-member{ min-width: calc(100% / 4); }
+    #vv-about .vv-member-photo{
+      aspect-ratio: 3 / 4;
+      border-radius: 12px;
+      border: 1px dashed rgba(150,208,255,.38);
+      background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.02)), rgba(10,18,34,.64);
+      display: grid;
+      place-items: center;
+      color: rgba(205,232,255,.78);
+      font-size: clamp(16px, 1.1vw, 18px);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    #vv-about .vv-member-photo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 35%;
+      display: block;
+    }
+    #vv-about .vv-member-photo img.vv-photo-daniel-wentworth{
+      object-position: center 28%;
+    }
+    #vv-about .vv-member h3{ margin-bottom: 6px; }
+
     #vv-about .vv-member em{ display: block; color: rgba(197,228,255,.86); margin-bottom: 4px; }
+
+    #vv-about .vv-team-controls{
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    #vv-about .vv-team-btn{
+      min-height: 44px;
+      min-width: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(140,204,255,.46);
+      background: rgba(255,255,255,.06);
+      color: rgba(238,248,255,.96);
+      font-family: "Cinzel", serif;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #vv-about .vv-team-dots{ display: inline-flex; align-items: center; gap: 8px; }
+    #vv-about .vv-team-dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(146,207,255,.5);
+      background: rgba(255,255,255,.2);
+      padding: 0;
+      cursor: pointer;
+    }
+    #vv-about .vv-team-dot.is-active{ background: rgba(191,230,255,.9); box-shadow: 0 0 14px rgba(120,200,255,.5); }
+
+    @media (max-width: 980px){
+      #vv-about .vv-member{ min-width: 100%; }
+    }
 
     #vv-about .vv-cta-row{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
     #vv-about .vv-cta{
@@ -104,8 +168,7 @@ export const ABOUT_HTML = String.raw`
 
     @media (max-width: 980px){
       #vv-about .vv-thesis,
-      #vv-about .vv-principles,
-      #vv-about .vv-team{ grid-template-columns: 1fr; }
+      #vv-about .vv-principles{ grid-template-columns: 1fr; }
     }
 
     @media (max-width: 1280px){
@@ -178,20 +241,41 @@ export const ABOUT_HTML = String.raw`
     </section>
 
     <section class="vv-block" aria-label="Team">
-      <h2>The Studio Lens</h2>
-      <div class="vv-grid vv-team">
-        <article class="vv-member">
-          <em>Strategic Architecture</em>
-          <p>Converts ambition into coherent strategic structures with decision boundaries that hold over time.</p>
-        </article>
-        <article class="vv-member">
-          <em>Operational Design</em>
-          <p>Builds execution frameworks where accountability, escalation, and delivery rhythm are structurally explicit.</p>
-        </article>
-        <article class="vv-member">
-          <em>Identity Systems</em>
-          <p>Aligns expression and operation so what you communicate and what you deliver stop contradicting each other.</p>
-        </article>
+      <h2>Team Members</h2>
+      <div class="vv-team-carousel" aria-roledescription="carousel" aria-label="Team members carousel">
+        <div class="vv-team-viewport">
+          <div class="vv-team-track">
+            <article class="vv-member">
+              <div class="vv-member-photo"><img class="vv-photo-daniel-wentworth" src="/images/Dwentworth%20potrait.jpg" alt="Daniel Wentworth" loading="lazy" /></div>
+              <h3>Daniel Wentworth</h3>
+              <em>Strategic Architecture</em>
+              <p>Converts ambition into coherent strategic structures with decision boundaries that hold over time.</p>
+            </article>
+            <article class="vv-member">
+              <div class="vv-member-photo"><img src="/images/DanielMiller.jpg" alt="Daniel Miller" loading="lazy" /></div>
+              <h3>Daniel Miller</h3>
+              <em>Operational Design</em>
+              <p>Builds execution frameworks where accountability, escalation, and delivery rhythm are structurally explicit.</p>
+            </article>
+            <article class="vv-member">
+              <div class="vv-member-photo"><img src="/images/tylerborbon.png" alt="Tyler Borbon" loading="lazy" /></div>
+              <h3>Tyler Borbon</h3>
+              <em>Identity Systems</em>
+              <p>Aligns expression and operation so what you communicate and what you deliver stop contradicting each other.</p>
+            </article>
+            <article class="vv-member">
+              <div class="vv-member-photo"><img src="/images/arronrodecker.jpeg" alt="Aaron Rodecker" loading="lazy" /></div>
+              <h3>Aaron Rodecker</h3>
+              <em>Implementation Leadership</em>
+              <p>Translates strategy into practical execution milestones so initiatives move from concept into measurable progress.</p>
+            </article>
+          </div>
+        </div>
+        <div class="vv-team-controls">
+          <button class="vv-team-btn vv-team-prev" type="button" aria-label="Previous team member">&#8592;</button>
+          <div class="vv-team-dots" aria-label="Carousel pagination"></div>
+          <button class="vv-team-btn vv-team-next" type="button" aria-label="Next team member">&#8594;</button>
+        </div>
       </div>
     </section>
 
@@ -207,5 +291,69 @@ export const ABOUT_HTML = String.raw`
 </section>
 `;
 
-export const ABOUT_TEAM_SCRIPT = `(function(){})();`;
+export const ABOUT_TEAM_SCRIPT = `(function(){
+  const root = document.getElementById("vv-about");
+  if (!root) return;
+
+  const carousel = root.querySelector(".vv-team-carousel");
+  if (!carousel) return;
+
+  const track = carousel.querySelector(".vv-team-track");
+  const slides = Array.from(carousel.querySelectorAll(".vv-member"));
+  const prev = carousel.querySelector(".vv-team-prev");
+  const next = carousel.querySelector(".vv-team-next");
+  const dotsWrap = carousel.querySelector(".vv-team-dots");
+
+  if (!track || slides.length === 0 || !prev || !next || !dotsWrap) return;
+
+  const visible = window.matchMedia("(max-width: 980px)").matches ? 1 : 4;
+  const totalPages = Math.max(1, slides.length - visible + 1);
+  for (let i = 0; i < totalPages; i += 1) {
+    const dot = document.createElement("button");
+    dot.className = "vv-team-dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", "Go to team view " + (i + 1));
+    dot.setAttribute("aria-selected", "false");
+    dotsWrap.appendChild(dot);
+  }
+
+  const dots = Array.from(dotsWrap.querySelectorAll(".vv-team-dot"));
+
+  let index = 0;
+  const total = slides.length;
+  const maxIndex = Math.max(0, total - visible);
+  const shift = 100 / visible;
+
+  const setIndex = (newIndex) => {
+    index = Math.min(maxIndex, Math.max(0, newIndex));
+    track.style.transform = "translateX(-" + (index * shift) + "%)";
+
+    dots.forEach((dot, dotIndex) => {
+      const active = dotIndex === index;
+      dot.classList.toggle("is-active", active);
+      dot.setAttribute("aria-selected", String(active));
+    });
+  };
+
+  prev.addEventListener("click", () => setIndex(index - 1));
+  next.addEventListener("click", () => setIndex(index + 1));
+
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => setIndex(dotIndex));
+  });
+
+  carousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      setIndex(index - 1);
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      setIndex(index + 1);
+    }
+  });
+
+  setIndex(0);
+})();`;
 export const FOOTER_SCRIPT = `(function(){})();`;
