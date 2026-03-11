@@ -1,0 +1,144 @@
+#vv-services{
+  --vv-max: 1200px;
+  --vv-shell: min(var(--vv-max), calc(100vw - 32px));
+  --vv-title: clamp(36px, 5.2vw, 66px);
+  --vv-h2: clamp(28px, 3.4vw, 44px);
+  --vv-h3: clamp(21px, 2.2vw, 30px);
+  --vv-body: clamp(18px, 1.3vw, 23px);
+  --vv-border: rgba(123,183,235,.44);
+  --vv-glass: rgba(8,14,28,.62);
+  color: rgba(242,248,255,.96);
+  padding: 236px 0 60px;
+}
+#vv-services *{ box-sizing: border-box; }
+#vv-services .vv-shell{ width: var(--vv-shell); margin: 0 auto; }
+#vv-services p,
+#vv-services li,
+#vv-services h1,
+#vv-services h2,
+#vv-services h3{
+  overflow-wrap: anywhere;
+}
+#vv-services h1,
+#vv-services h2,
+#vv-services h3{ margin: 0; color: rgba(250,253,255,.98); }
+#vv-services h1{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-title); line-height: 1.05; text-shadow: 0 0 18px rgba(112,190,255,.2); }
+#vv-services h2{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-h2); line-height: 1.1; }
+#vv-services h3{ font-family: "Cinzel", serif; font-size: var(--vv-h3); line-height: 1.14; }
+#vv-services p,
+#vv-services li,
+#vv-services a,
+#vv-services span,
+#vv-services b{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-body); line-height: 1.42; }
+#vv-services p{ margin: 0; color: rgba(232,243,255,.9); }
+#vv-services ul{ margin: 10px 0 0 18px; padding: 0; color: rgba(221,235,252,.88); }
+
+#vv-services .vv-block{
+  border-radius: 24px;
+  border: 1px solid var(--vv-border);
+  background:
+    radial-gradient(680px 420px at -8% 96%, rgba(11,33,63,.96), transparent 64%),
+    linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.01)),
+    var(--vv-glass);
+  box-shadow: 0 24px 72px rgba(0,0,0,.52), inset 0 1px 0 rgba(255,255,255,.08);
+  padding: clamp(22px, 3.2vw, 34px);
+}
+#vv-services .vv-block + .vv-block{ margin-top: 18px; }
+
+#vv-services .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: clamp(14px, .95vw, 16px); color: rgba(193,224,251,.78); }
+#vv-services .vv-block[aria-label="Services hero"]{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 18px;
+  row-gap: 10px;
+  align-items: start;
+}
+#vv-services .vv-block[aria-label="Services hero"] .vv-kicker{ grid-column: 1 / -1; grid-row: 1; }
+#vv-services .vv-hero-copy{ max-width: 21ch; margin-top: 10px; text-align: center; margin-left: auto; margin-right: auto; }
+#vv-services .vv-block[aria-label="Services hero"] .vv-hero-copy{ grid-column: 1 / -1; grid-row: 2; max-width: none; width: 100%; }
+#vv-services .vv-hero-sub{ max-width: 70ch; margin-top: 14px; }
+#vv-services .vv-block[aria-label="Services hero"] .vv-hero-sub{ grid-column: 1; grid-row: 3; margin-top: 0; }
+#vv-services .vv-block[aria-label="Services hero"] .vv-cta-row{ grid-column: 2; grid-row: 3; margin-top: 0; justify-content: flex-end; align-self: end; }
+
+#vv-services .vv-cta-row{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
+#vv-services .vv-cta{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+#vv-services .vv-cta:hover{ transform: translateY(-2px); }
+#vv-services .vv-cta-primary{
+  border: 1px solid rgba(123,198,255,.55);
+  background: linear-gradient(rgba(0,0,0,0) 8%, rgba(92,154,230,.68) 88%);
+  color: rgba(255,255,255,.96);
+  box-shadow: 0 12px 30px rgba(65,126,209,.34);
+}
+#vv-services .vv-cta-ghost{
+  border: 1px solid rgba(230,242,255,.2);
+  background: rgba(255,255,255,.04);
+  color: rgba(233,244,255,.92);
+}
+
+#vv-services .vv-lane-grid,
+#vv-services .vv-cred-grid,
+#vv-services .vv-artifacts-grid{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+
+#vv-services .vv-lane,
+#vv-services .vv-cred,
+#vv-services .vv-artifact{ border-radius: 20px; border: 1px solid rgba(120,170,220,.4); background: rgba(255,255,255,.04); padding: 16px; }
+#vv-services .vv-lane p,
+#vv-services .vv-cred p,
+#vv-services .vv-artifact p{ margin-top: 8px; }
+
+#vv-services .vv-process{ margin-top: 8px; }
+#vv-services .vv-steps{ display: grid; gap: 12px; margin-top: 14px; }
+#vv-services .vv-step{ border: 1px solid rgba(120,170,220,.36); border-radius: 16px; padding: 14px; background: rgba(255,255,255,.03); }
+#vv-services .vv-step b{ display: block; font-family: "Cinzel", serif; font-size: clamp(17px, 2vw, 20px); margin-bottom: 4px; }
+
+#vv-services .vv-final-cta p{ max-width: 58ch; margin-top: 10px; }
+
+@media (max-width: 980px){
+  #vv-services .vv-lane-grid,
+  #vv-services .vv-cred-grid,
+  #vv-services .vv-artifacts-grid{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 1280px){
+  #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 28px)); }
+}
+
+@media (max-width: 1024px){
+  #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 22px)); padding-bottom: 52px; }
+  #vv-services .vv-block{ padding: clamp(18px, 2.8vw, 26px); }
+}
+
+@media (max-width: 768px){
+  #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 18px)); }
+  #vv-services .vv-block[aria-label="Services hero"]{ grid-template-columns: 1fr; row-gap: 12px; }
+  #vv-services .vv-block[aria-label="Services hero"] .vv-kicker,
+  #vv-services .vv-block[aria-label="Services hero"] .vv-hero-copy,
+  #vv-services .vv-block[aria-label="Services hero"] .vv-hero-sub,
+  #vv-services .vv-block[aria-label="Services hero"] .vv-cta-row{ grid-column: 1; grid-row: auto; }
+  #vv-services .vv-block[aria-label="Services hero"] .vv-cta-row{ justify-content: flex-start; }
+  #vv-services .vv-cta{ width: 100%; min-height: 44px; }
+  #vv-services .vv-cta-row{ gap: 10px; }
+}
+
+@media (max-width: 480px){
+  #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 14px)); }
+  #vv-services .vv-block,
+  #vv-services .vv-lane,
+  #vv-services .vv-cred,
+  #vv-services .vv-artifact,
+  #vv-services .vv-step{ border-radius: 16px; }
+  #vv-services .vv-block{ padding: 14px; }
+}
+
+@media (max-width: 360px){
+  #vv-services{ --vv-shell: min(var(--vv-max), calc(100vw - 10px)); }
+}
