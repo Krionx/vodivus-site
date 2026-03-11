@@ -11,7 +11,7 @@ const CONTACT_SCRIPTS = [CONTACT_SCRIPT, FOOTER_SCRIPT];
 
 export default function ContactPage() {
   return (
-    <div className="vv-global-header-gap-118">
+    <div>
       <InjectedContentPage html={CONTACT_HTML} scripts={CONTACT_SCRIPTS} />
     </div>
   );
