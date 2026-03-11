@@ -68,7 +68,7 @@ export const ABOUT_HTML = String.raw`
     #vv-about .vv-hero-sub{ max-width: 60ch; margin: 14px auto 0; text-align: center; }
 
     #vv-about .vv-grid{ display: grid; gap: 14px; }
-    #vv-about .vv-thesis{ grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 16px; }
+    #vv-about .vv-thesis{ grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
     #vv-about .vv-principles{ grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
     #vv-about .vv-team-carousel{ margin-top: 16px; }
     #vv-about .vv-team-viewport{ overflow: hidden; border-radius: 18px; }
@@ -78,7 +78,7 @@ export const ABOUT_HTML = String.raw`
     #vv-about .vv-principle,
     #vv-about .vv-member{ border-radius: 18px; border: 1px solid rgba(120,170,220,.38); background: rgba(255,255,255,.04); padding: 14px; }
 
-    #vv-about .vv-member{ min-width: calc(100% / 4); }
+    #vv-about .vv-member{ min-width: calc(100% / 3); }
     #vv-about .vv-member-photo{
       aspect-ratio: 3 / 4;
       border-radius: 12px;
@@ -219,6 +219,10 @@ export const ABOUT_HTML = String.raw`
           <h3>Execution Reveals Truth</h3>
           <p>Ideas feel coherent in theory. Reality exposes contradictions. We design for contact with reality, not protection from it.</p>
         </article>
+        <article class="vv-tile">
+          <h3>Systems Over Hustle</h3>
+          <p>Startups fail less from lack of effort than lack of structure. Durable ventures are built on systems that compound, not chaos that burns out.</p>
+        </article>
       </div>
     </section>
 
@@ -241,32 +245,38 @@ export const ABOUT_HTML = String.raw`
     </section>
 
     <section class="vv-block" aria-label="Team">
-      <h2>Team Members</h2>
+      <h2>The Team</h2>
       <div class="vv-team-carousel" aria-roledescription="carousel" aria-label="Team members carousel">
         <div class="vv-team-viewport">
           <div class="vv-team-track">
             <article class="vv-member">
+              <div class="vv-member-photo"><img src="/images/founder.jpg" alt="Founder" loading="lazy" /></div>
+              <h3>Founder</h3>
+              <em>Founder</em>
+              <p>Defines strategic direction and ensures vision, systems, and execution remain aligned across the venture.</p>
+            </article>
+            <article class="vv-member">
               <div class="vv-member-photo"><img class="vv-photo-daniel-wentworth" src="/images/Dwentworth%20potrait.jpg" alt="Daniel Wentworth" loading="lazy" /></div>
               <h3>Daniel Wentworth</h3>
-              <em>Strategic Architecture</em>
+              <em>Technical Creative Director | Systems Architect</em>
               <p>Converts ambition into coherent strategic structures with decision boundaries that hold over time.</p>
             </article>
             <article class="vv-member">
               <div class="vv-member-photo"><img src="/images/DanielMiller.jpg" alt="Daniel Miller" loading="lazy" /></div>
               <h3>Daniel Miller</h3>
-              <em>Operational Design</em>
+              <em>Ecosystem Architect &amp; Systems Designer</em>
               <p>Builds execution frameworks where accountability, escalation, and delivery rhythm are structurally explicit.</p>
             </article>
             <article class="vv-member">
               <div class="vv-member-photo"><img src="/images/tylerborbon.png" alt="Tyler Borbon" loading="lazy" /></div>
               <h3>Tyler Borbon</h3>
-              <em>Identity Systems</em>
+              <em>Marketing &amp; Media Director</em>
               <p>Aligns expression and operation so what you communicate and what you deliver stop contradicting each other.</p>
             </article>
             <article class="vv-member">
               <div class="vv-member-photo"><img src="/images/arronrodecker.jpeg" alt="Aaron Rodecker" loading="lazy" /></div>
               <h3>Aaron Rodecker</h3>
-              <em>Implementation Leadership</em>
+              <em>Database Engineer</em>
               <p>Translates strategy into practical execution milestones so initiatives move from concept into measurable progress.</p>
             </article>
           </div>
@@ -306,7 +316,7 @@ export const ABOUT_TEAM_SCRIPT = `(function(){
 
   if (!track || slides.length === 0 || !prev || !next || !dotsWrap) return;
 
-  const visible = window.matchMedia("(max-width: 980px)").matches ? 1 : 4;
+  const visible = window.matchMedia("(max-width: 980px)").matches ? 1 : 3;
   const totalPages = Math.max(1, slides.length - visible + 1);
   for (let i = 0; i < totalPages; i += 1) {
     const dot = document.createElement("button");
