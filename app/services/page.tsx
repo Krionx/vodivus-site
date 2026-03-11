@@ -121,29 +121,51 @@ export default function ServicesPage() {
               </article>
               <article className="vv-artifact">
                 <input type="radio" name="vv-artifact-modal" id="vv-coin-pack" className="vv-artifact-cb" />
-                <label htmlFor="vv-coin-pack" className="vv-artifact-label" aria-label="Open Execution Pack details">
+                <label htmlFor="vv-coin-pack" className="vv-artifact-label" aria-label="Open Website and Digital Systems details">
                   <span className="vv-artifact-coin" aria-hidden="true">
                     <img className="vv-coin-img" src="/images/glassweb1.png" alt="" />
                   </span>
                 </label>
                 <label htmlFor="vv-coin-none" className="vv-artifact-dim" aria-label="Close details"></label>
-                <div className="vv-artifact-modal" role="dialog" aria-label="Execution Pack details">
-                  <h3>Execution Pack</h3>
-                  <p>SOP set, escalation pathways, checklist framework, and briefing format.</p>
+                <div className="vv-artifact-modal" role="dialog" aria-label="Website and Digital Systems details">
+                  <h3>Website &amp; Digital Systems</h3>
+                  <p>We develop the digital infrastructure that powers the venture online. This includes websites, integrations, and automation systems that create a seamless digital experience for customers and operators.</p>
+                  <h4>Services Included</h4>
+                  <ul>
+                    <li>Website design and development</li>
+                    <li>Digital architecture planning</li>
+                    <li>Lead capture and intake systems</li>
+                    <li>Automation integrations</li>
+                    <li>CRM connection and workflow triggers</li>
+                    <li>Performance optimization and analytics</li>
+                  </ul>
+                  <h4>Starting Price</h4>
+                  <p><b>Starting at $3,500</b></p>
                   <label htmlFor="vv-coin-none" className="vv-artifact-close">Close</label>
                 </div>
               </article>
               <article className="vv-artifact">
                 <input type="radio" name="vv-artifact-modal" id="vv-coin-notes" className="vv-artifact-cb" />
-                <label htmlFor="vv-coin-notes" className="vv-artifact-label" aria-label="Open Leadership Notes details">
+                <label htmlFor="vv-coin-notes" className="vv-artifact-label" aria-label="Open Venture and Brand Development details">
                   <span className="vv-artifact-coin" aria-hidden="true">
                     <img className="vv-coin-img" src="/images/glassvent1.png" alt="" />
                   </span>
                 </label>
                 <label htmlFor="vv-coin-none" className="vv-artifact-dim" aria-label="Close details"></label>
-                <div className="vv-artifact-modal" role="dialog" aria-label="Leadership Notes details">
-                  <h3>Leadership Notes</h3>
-                  <p>Risk watchpoints, decision triggers, and next-phase priorities.</p>
+                <div className="vv-artifact-modal" role="dialog" aria-label="Venture and Brand Development details">
+                  <h3>Venture &amp; Brand Development</h3>
+                  <p>We design the strategic foundation of the venture. This phase defines positioning, identity architecture, and the structural blueprint that guides the business into the market with clarity and purpose.</p>
+                  <h4>Services Included</h4>
+                  <ul>
+                    <li>Market positioning and competitive landscape</li>
+                    <li>Brand identity architecture</li>
+                    <li>Offer structure and service design</li>
+                    <li>Venture roadmap and strategic direction</li>
+                    <li>Messaging and narrative development</li>
+                    <li>Brand system documentation</li>
+                  </ul>
+                  <h4>Starting Price</h4>
+                  <p><b>Starting at $1,500</b></p>
                   <label htmlFor="vv-coin-none" className="vv-artifact-close">Close</label>
                 </div>
               </article>
