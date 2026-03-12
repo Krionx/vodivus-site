@@ -182,8 +182,8 @@
   position: fixed;
   left: 50vw;
   top: 50dvh;
-  width: min(760px, calc(100vw - 34px));
-  max-height: min(80vh, 680px);
+  width: min(920px, calc(100vw - 34px));
+  max-height: min(88vh, 760px);
   z-index: 1000000;
   opacity: 0;
   pointer-events: none;
@@ -192,27 +192,35 @@
   border: 1px solid rgba(123,183,235,.44);
   background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02)), rgba(10,18,34,.94);
   box-shadow: 0 32px 80px rgba(0,0,0,.68), inset 0 1px 0 rgba(255,255,255,.08);
-  padding: 20px;
+  padding: 16px;
   overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   text-align: left;
   transition: opacity .3s ease, transform .32s ease;
+}
+#vv-services .vv-artifacts-grid .vv-artifact-modal::-webkit-scrollbar{
+  width: 0;
+  height: 0;
+  display: none;
 }
 #vv-services .vv-artifacts-grid .vv-artifact-modal h3{ margin: 0 0 8px; }
 #vv-services .vv-artifacts-grid .vv-artifact-modal h4{
   margin: 10px 0 4px;
   font-family: "Cinzel", serif;
-  font-size: 24px;
+  font-size: 36px;
   line-height: 1.2;
   color: rgba(238,246,255,.95);
 }
-#vv-services .vv-artifacts-grid .vv-artifact-modal p{ margin: 0; max-width: 68ch; }
+#vv-services .vv-artifacts-grid .vv-artifact-modal h3{ font-size: 36px; line-height: 1.08; }
+#vv-services .vv-artifacts-grid .vv-artifact-modal p{ margin: 0; max-width: none; font-size: 24px; line-height: 1.34; }
 #vv-services .vv-artifacts-grid .vv-artifact-modal ul{
   list-style: disc;
   text-align: left;
   margin: 8px 0 0;
-  padding-left: 20px;
+  padding-left: 24px;
 }
-#vv-services .vv-artifacts-grid .vv-artifact-modal li{ margin: 2px 0; }
+#vv-services .vv-artifacts-grid .vv-artifact-modal li{ margin: 2px 0; font-size: 24px; line-height: 1.28; }
 #vv-services .vv-artifacts-grid .vv-artifact-close{
   display: inline-flex;
   margin-top: 14px;
@@ -220,6 +228,7 @@
   border-radius: 999px;
   border: 1px solid rgba(123,183,235,.52);
   background: rgba(255,255,255,.06);
+  font-size: 18px;
   cursor: pointer;
 }
 #vv-services .vv-artifacts-grid .vv-artifact-cb:checked ~ .vv-artifact-label .vv-artifact-coin{

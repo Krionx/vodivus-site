@@ -346,7 +346,7 @@ export const HOME_HTML = String.raw`
     <section class="vv-hero" aria-label="Hero">
       <div class="vv-hero-main">
         <p class="vv-hero-kicker" style="font-size:24px;">Venture Architecture Studio</p>
-        <h1 class="vv-hero-copy">Dream Boldly. Build Intentionally.</h1>
+        <h1 class="vv-hero-copy">Dream Boldly <br> Build Intentionally</h1>
         <p class="vv-hero-sub">Vodivus turns ambitious ideas into executable systems through clear positioning, resilient operations, and identity architecture that survives reality.</p>
       </div>
       <div class="vv-hero-side">
@@ -362,7 +362,7 @@ export const HOME_HTML = String.raw`
       <h2 style="font-size:72px;">Structured Build Paths</h2>
       <p class="vv-muted" style="margin-top:8px; margin-bottom:14px; font-size:24px;">Choose the architecture lane that removes your current bottleneck.</p>
       <div class="vv-grid">
-        <article class="vv-card vv-lane" aria-label="The Signal lane">
+        <article class="vv-card vv-lane" aria-label="The Signal lane" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('is-open'); this.setAttribute('aria-expanded', String(this.classList.contains('is-open')));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); this.classList.toggle('is-open'); this.setAttribute('aria-expanded', String(this.classList.contains('is-open')));}">
           <h3>Market and Positioning Architecture</h3>
           <p><em>The Signal</em></p>
           <p>Your idea needs definition before it can scale.</p>
@@ -372,7 +372,7 @@ export const HOME_HTML = String.raw`
           </div>
         </article>
 
-        <article class="vv-card vv-lane" aria-label="The System lane">
+        <article class="vv-card vv-lane" aria-label="The System lane" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('is-open'); this.setAttribute('aria-expanded', String(this.classList.contains('is-open')));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); this.classList.toggle('is-open'); this.setAttribute('aria-expanded', String(this.classList.contains('is-open')));}">
           <h3>Operational and Execution Architecture</h3>
           <p><em>The System</em></p>
           <p>Execution without structure burns time and talent.</p>
@@ -382,7 +382,7 @@ export const HOME_HTML = String.raw`
           </div>
         </article>
 
-        <article class="vv-card vv-lane" aria-label="The Signature lane">
+        <article class="vv-card vv-lane" aria-label="The Signature lane" role="button" tabindex="0" aria-expanded="false" onclick="this.classList.toggle('is-open'); this.setAttribute('aria-expanded', String(this.classList.contains('is-open')));" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault(); this.classList.toggle('is-open'); this.setAttribute('aria-expanded', String(this.classList.contains('is-open')));}">
           <h3>Identity and Experience Architecture</h3>
           <p><em>The Signature</em></p>
           <p>Who you are, expressed with precision.</p>

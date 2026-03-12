@@ -165,7 +165,7 @@ export default function ServicesPage() {
                     <li>Brand system documentation</li>
                   </ul>
                   <h4>Starting Price</h4>
-                  <p><b>Starting at $1,500</b></p>
+                  <p><b style={{ fontSize: "24px" }}>Starting at $1,500</b></p>
                   <label htmlFor="vv-coin-none" className="vv-artifact-close">Close</label>
                 </div>
               </article>

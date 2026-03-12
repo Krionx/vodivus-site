@@ -78,13 +78,13 @@ export const ABOUT_HTML = String.raw`
     #vv-about .vv-principles{ grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 16px; }
     #vv-about .vv-team-carousel{ margin-top: 16px; }
     #vv-about .vv-team-viewport{ overflow: hidden; border-radius: 18px; }
-    #vv-about .vv-team-track{ display: flex; transition: transform .34s ease; will-change: transform; }
+    #vv-about .vv-team-track{ display: flex; gap: 14px; transition: transform .34s ease; will-change: transform; }
 
     #vv-about .vv-tile,
     #vv-about .vv-principle,
     #vv-about .vv-member{ border-radius: 18px; border: 1px solid rgba(120,170,220,.38); background: rgba(255,255,255,.04); padding: 14px; }
 
-    #vv-about .vv-member{ min-width: calc(100% / 3); }
+    #vv-about .vv-member{ min-width: calc((100% - 28px) / 3); }
     #vv-about .vv-member-photo{
       aspect-ratio: 3 / 4;
       border-radius: 12px;
@@ -211,7 +211,7 @@ export const ABOUT_HTML = String.raw`
     <div class="vv-hero-spacer" aria-hidden="true"></div>
     <section class="vv-block" aria-label="About hero">
       <p class="vv-kicker">Philosophical Depth</p>
-      <h1 class="vv-hero-copy">We Treat Ventures as Living Systems, Not Static Brands.</h1>
+      <h1 class="vv-hero-copy" style="font-size:72px;">We Treat Ventures as Living Systems, Not Static Brands</h1>
       <p class="vv-hero-sub">Vodivus is built on a simple conviction: strategy, operations, and identity are one organism. If they evolve independently, the venture fragments. If they move together, momentum compounds.</p>
     </section>
 
@@ -339,11 +339,11 @@ export const ABOUT_TEAM_SCRIPT = `(function(){
   let index = 0;
   const total = slides.length;
   const maxIndex = Math.max(0, total - visible);
-  const shift = 100 / visible;
-
   const setIndex = (newIndex) => {
     index = Math.min(maxIndex, Math.max(0, newIndex));
-    track.style.transform = "translateX(-" + (index * shift) + "%)";
+    const firstOffset = slides[0]?.offsetLeft ?? 0;
+    const targetOffset = slides[index]?.offsetLeft ?? firstOffset;
+    track.style.transform = "translateX(-" + (targetOffset - firstOffset) + "px)";
 
     dots.forEach((dot, dotIndex) => {
       const active = dotIndex === index;
