@@ -111,6 +111,133 @@ html::before {
   }
 }
 
+/* Mobile optimization layer (structure-preserving, CSS-only) */
+@media (max-width: 900px) {
+  .vv-container,
+  #vv-home .vv-shell,
+  #vv-about .vv-shell,
+  #vv-contact .vv-shell,
+  #vv-services .vv-shell {
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: min(1200px, 100%);
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .grid,
+  .vodivus-grid,
+  .vodivus-grid-3,
+  .vodivus-split,
+  .split-layout,
+  #vv-home .vv-grid,
+  #vv-services .vv-lane-grid,
+  #vv-services .vv-cred-grid,
+  #vv-services .vv-artifacts-grid,
+  #vv-about .vv-thesis,
+  #vv-about .vv-principles,
+  #vv-contact .vv-grid,
+  #vv-contact .vv-field-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero,
+  .vodivus-hero,
+  .hero-content,
+  #vv-home .vv-hero,
+  #vv-home .vv-hero-main,
+  #vv-home .vv-hero-side,
+  #vv-services .vv-block[aria-label="Services hero"],
+  #vv-services .vv-hero-copy,
+  #vv-services .vv-hero-sub,
+  #vv-about .vv-hero-copy,
+  #vv-about .vv-hero-sub,
+  #vv-contact .vv-hero-copy,
+  #vv-contact .vv-hero-sub {
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .button,
+  .btn,
+  .cta,
+  .vv-button,
+  .vv-cta,
+  .vv-submit,
+  .vv-step2-action,
+  .vv-step2-back,
+  .vv-step2-submit,
+  .vv-global-cta {
+    width: 100% !important;
+    max-width: 320px;
+  }
+
+  h1,
+  .vv-title,
+  #vv-home h1,
+  #vv-about h1,
+  #vv-contact h1,
+  #vv-services h1,
+  #vv-home .vv-hero-copy,
+  #vv-about .vv-hero-copy,
+  #vv-services .vv-hero-copy,
+  #vv-contact .vv-hero-copy {
+    font-size: 42px !important;
+    line-height: 1.1 !important;
+  }
+
+  h2,
+  .vv-subtitle,
+  #vv-home h2,
+  #vv-about h2,
+  #vv-contact h2,
+  #vv-services h2 {
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+  }
+
+  p,
+  li,
+  .vv-body,
+  #vv-home p,
+  #vv-about p,
+  #vv-contact p,
+  #vv-services p,
+  #vv-home li,
+  #vv-about li,
+  #vv-contact li,
+  #vv-services li {
+    font-size: 18px !important;
+    line-height: 1.4 !important;
+  }
+
+  section,
+  #vv-home,
+  #vv-about,
+  #vv-contact,
+  #vv-services {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .vv-door::after,
+  #vv-services .vv-artifact-coin,
+  #vv-services .vv-expand-body,
+  #vv-about .vv-team-track,
+  #vv-home .vv-lane,
+  #vv-home .vv-cta,
+  #vv-contact .vv-calendar-shard,
+  #vv-contact .vv-step2-shard {
+    will-change: transform;
+  }
+}
+
 /* Typography */
 
 .vv-title {
