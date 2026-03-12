@@ -186,6 +186,218 @@ export const CONTACT_HTML = String.raw`
       cursor: pointer;
     }
 
+    #vv-contact .vv-step2-action{
+      margin-top: 12px;
+      border: 1px solid rgba(123,198,255,.55);
+      border-radius: 14px;
+      min-height: 46px;
+      padding: 10px 16px;
+      background: linear-gradient(rgba(0,0,0,0) 8%, rgba(92,154,230,.68) 88%);
+      color: rgba(255,255,255,.96);
+      box-shadow: 0 12px 30px rgba(65,126,209,.34);
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    #vv-contact .vv-step2-action:hover{ transform: translateY(-2px); }
+
+    #vv-contact .vv-calendar-dim{
+      position: fixed;
+      inset: 0;
+      z-index: 1000001;
+      opacity: 0;
+      pointer-events: none;
+      background: rgba(0, 2, 8, .42);
+      -webkit-backdrop-filter: blur(10px) saturate(.74) brightness(.7);
+      backdrop-filter: blur(10px) saturate(.74) brightness(.7);
+      transition: opacity .24s ease;
+    }
+
+    #vv-contact .vv-calendar-shard{
+      position: fixed;
+      left: 50vw;
+      top: 50dvh;
+      width: min(460px, calc(100vw - 34px));
+      z-index: 1000002;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(.94);
+      border-radius: 20px;
+      border: 1px solid rgba(123,183,235,.44);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02)),
+        rgba(8,14,28,.94);
+      box-shadow: 0 28px 70px rgba(0,0,0,.64), inset 0 1px 0 rgba(255,255,255,.08);
+      padding: 16px;
+      transition: opacity .24s ease, transform .26s ease;
+    }
+
+    #vv-contact .vv-calendar-head{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    #vv-contact .vv-calendar-title-wrap{ min-width: 0; }
+    #vv-contact .vv-calendar-title{
+      margin: 0;
+      font-family: "Cinzel Decorative", serif;
+      font-size: clamp(24px, 2.8vw, 40px);
+      line-height: 1.04;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+    #vv-contact .vv-calendar-sub{
+      margin: 6px 0 0;
+      color: rgba(209,229,250,.86);
+      font-size: clamp(15px, 1.05vw, 18px);
+    }
+
+    #vv-contact .vv-calendar-close{
+      min-height: 36px;
+      min-width: 36px;
+      border-radius: 10px;
+      border: 1px solid rgba(140,204,255,.46);
+      background: rgba(255,255,255,.06);
+      color: rgba(238,248,255,.96);
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    #vv-contact .vv-cal-toolbar{
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+    #vv-contact .vv-cal-nav-btn{
+      min-height: 40px;
+      min-width: 40px;
+      border-radius: 12px;
+      border: 1px solid rgba(140,204,255,.36);
+      background: rgba(255,255,255,.05);
+      color: rgba(238,248,255,.96);
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    #vv-contact .vv-cal-month-chip{
+      min-height: 42px;
+      border-radius: 14px;
+      border: 1px solid rgba(140,204,255,.3);
+      background: rgba(255,255,255,.04);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px 10px;
+    }
+    #vv-contact .vv-cal-month-label{
+      font-family: "Cinzel", serif;
+      font-size: clamp(22px, 1.75vw, 30px);
+      line-height: 1;
+      text-transform: uppercase;
+      color: rgba(232,244,255,.98);
+      white-space: nowrap;
+    }
+    #vv-contact .vv-cal-chip-row{ display: inline-flex; gap: 6px; }
+    #vv-contact .vv-cal-chip{
+      min-height: 30px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(140,204,255,.34);
+      background: rgba(255,255,255,.06);
+      color: rgba(228,242,255,.95);
+      font-size: clamp(14px, .95vw, 16px);
+      cursor: pointer;
+    }
+
+    #vv-contact .vv-cal-weekdays,
+    #vv-contact .vv-cal-grid{
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 7px;
+    }
+    #vv-contact .vv-cal-weekdays{
+      margin-top: 8px;
+      margin-bottom: 6px;
+    }
+    #vv-contact .vv-cal-weekday{
+      text-align: center;
+      color: rgba(182,212,241,.64);
+      font-size: clamp(12px, .9vw, 14px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-family: "Cinzel", serif;
+    }
+    #vv-contact .vv-cal-day{
+      min-height: 48px;
+      border-radius: 14px;
+      border: 1px solid rgba(140,204,255,.26);
+      background: rgba(255,255,255,.03);
+      color: rgba(233,245,255,.95);
+      font-family: "Cinzel", serif;
+      font-size: clamp(16px, 1.15vw, 20px);
+      line-height: 1;
+      cursor: pointer;
+      transition: border-color .16s ease, background .16s ease, transform .16s ease;
+    }
+    #vv-contact .vv-cal-day:hover{ transform: translateY(-1px); border-color: rgba(155,209,255,.62); }
+    #vv-contact .vv-cal-day.is-muted{
+      color: rgba(159,186,214,.42);
+      background: rgba(0,0,0,.16);
+      border-color: rgba(110,148,186,.2);
+    }
+    #vv-contact .vv-cal-day.is-today{ border-color: rgba(204,173,109,.62); }
+    #vv-contact .vv-cal-day.is-selected{
+      border-color: rgba(204,173,109,.9);
+      background: rgba(204,173,109,.16);
+      color: rgba(251,247,239,.98);
+    }
+
+    #vv-contact .vv-cal-footer{
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(142,198,243,.2);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+    }
+    #vv-contact .vv-cal-selected{
+      color: rgba(204,228,250,.86);
+      font-size: clamp(14px, .95vw, 16px);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-family: "Cinzel", serif;
+    }
+    #vv-contact .vv-cal-apply{
+      min-height: 46px;
+      padding: 8px 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(123,198,255,.5);
+      background: linear-gradient(rgba(0,0,0,0) 8%, rgba(92,154,230,.66) 88%);
+      color: rgba(255,255,255,.96);
+      font-family: "Cinzel Decorative", serif;
+      font-size: clamp(18px, 1.2vw, 24px);
+      cursor: pointer;
+    }
+
+    #vv-contact.is-calendar-open .vv-calendar-dim{
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #vv-contact.is-calendar-open .vv-calendar-shard{
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
     #vv-contact.is-step2-open .vv-step2-dim{
       opacity: 1;
       pointer-events: auto;
@@ -237,6 +449,7 @@ export const CONTACT_HTML = String.raw`
       #vv-contact{ --vv-shell: min(var(--vv-max), calc(100vw - 10px)); }
       #vv-contact .vv-submit-row{ grid-template-columns: 1fr; }
       #vv-contact .vv-submit{ min-height: 44px; }
+    }
   </style>
 
   <div class="vv-shell">
@@ -296,7 +509,69 @@ export const CONTACT_HTML = String.raw`
         <button id="vv-step2-close" class="vv-step2-close" type="button" aria-label="Close step 2">&times;</button>
       </div>
       <p class="vv-step2-sub">These options help us route your intake correctly.</p>
-      <p>Step 2 content goes here.</p>
+      <div class="vv-field">
+        <label for="vv-step2-service">What services are you interested in?</label>
+        <select id="vv-step2-service" name="step2_service" required>
+          <option value="">Select a service path</option>
+          <option value="venture-brand">Venture &amp; Brand Development</option>
+          <option value="website-digital">Website &amp; Digital Systems</option>
+          <option value="operational-systems">Operational Systems &amp; Execution</option>
+          <option value="not-sure">Not sure yet</option>
+        </select>
+      </div>
+      <div class="vv-field">
+        <label for="vv-step2-budget">Budget</label>
+        <select id="vv-step2-budget" name="step2_budget" required>
+          <option value="">Select a budget range</option>
+          <option value="lt-500">&lt;500</option>
+          <option value="500-1000">500 -1000</option>
+          <option value="2500-plus">2500+</option>
+          <option value="25-month">25/m</option>
+          <option value="200-month">200/m</option>
+        </select>
+      </div>
+      <button id="vv-step2-start-date" class="vv-step2-action" type="button">Project start date</button>
+    </section>
+
+    <button class="vv-calendar-dim" id="vv-calendar-dim" type="button" aria-label="Close calendar"></button>
+    <section id="vv-calendar-shard" class="vv-calendar-shard" role="dialog" aria-label="Project start date" aria-modal="true">
+      <div class="vv-calendar-head">
+        <div class="vv-calendar-title-wrap">
+          <h3 class="vv-calendar-title">Select start date</h3>
+          <p class="vv-calendar-sub">Stored clean for automation (YYYY-MM-DD).</p>
+        </div>
+        <button id="vv-calendar-close" class="vv-calendar-close" type="button" aria-label="Close calendar">&times;</button>
+      </div>
+      <div class="vv-cal-toolbar">
+        <button id="vv-cal-prev" class="vv-cal-nav-btn" type="button" aria-label="Previous month">&#8249;</button>
+        <div class="vv-cal-month-chip">
+          <span id="vv-cal-month-label" class="vv-cal-month-label">MONTH YYYY</span>
+          <span class="vv-cal-chip-row">
+            <button id="vv-cal-today" class="vv-cal-chip" type="button">TODAY</button>
+            <button id="vv-cal-clear" class="vv-cal-chip" type="button">CLEAR</button>
+          </span>
+        </div>
+        <button id="vv-cal-next" class="vv-cal-nav-btn" type="button" aria-label="Next month">&#8250;</button>
+      </div>
+
+      <div class="vv-cal-weekdays" aria-hidden="true">
+        <span class="vv-cal-weekday">SU</span>
+        <span class="vv-cal-weekday">MO</span>
+        <span class="vv-cal-weekday">TU</span>
+        <span class="vv-cal-weekday">WE</span>
+        <span class="vv-cal-weekday">TH</span>
+        <span class="vv-cal-weekday">FR</span>
+        <span class="vv-cal-weekday">SA</span>
+      </div>
+
+      <div id="vv-cal-grid" class="vv-cal-grid" role="grid" aria-label="Calendar dates"></div>
+
+      <div class="vv-cal-footer">
+        <p id="vv-cal-selected" class="vv-cal-selected">Selected: --</p>
+        <button id="vv-cal-apply" class="vv-cal-apply" type="button">APPLY</button>
+      </div>
+
+      <input id="vv-project-start-date" type="hidden" />
     </section>
   </div>
 </section>
@@ -308,7 +583,78 @@ export const CONTACT_SCRIPT = `(function(){
   const status = document.getElementById("vv-contact-status");
   const closeBtn = document.getElementById("vv-step2-close");
   const dim = document.getElementById("vv-step2-dim");
-  if (!root || !form || !status || !closeBtn || !dim) return;
+  const startDateBtn = document.getElementById("vv-step2-start-date");
+  const calendarDim = document.getElementById("vv-calendar-dim");
+  const calendarClose = document.getElementById("vv-calendar-close");
+  const calendarPrev = document.getElementById("vv-cal-prev");
+  const calendarNext = document.getElementById("vv-cal-next");
+  const calendarToday = document.getElementById("vv-cal-today");
+  const calendarClear = document.getElementById("vv-cal-clear");
+  const calendarApply = document.getElementById("vv-cal-apply");
+  const calendarGrid = document.getElementById("vv-cal-grid");
+  const calendarMonthLabel = document.getElementById("vv-cal-month-label");
+  const calendarSelected = document.getElementById("vv-cal-selected");
+  const projectStartDate = document.getElementById("vv-project-start-date");
+
+  if (!root || !form || !status || !closeBtn || !dim || !startDateBtn || !calendarDim || !calendarClose || !calendarPrev || !calendarNext || !calendarToday || !calendarClear || !calendarApply || !calendarGrid || !calendarMonthLabel || !calendarSelected || !projectStartDate) return;
+
+  const today = new Date();
+  const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  let viewDate = new Date(todayOnly.getFullYear(), todayOnly.getMonth(), 1);
+  let selectedDate = null;
+
+  const toIsoDate = (date) => {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, "0");
+    const d = String(date.getDate()).padStart(2, "0");
+    return y + "-" + m + "-" + d;
+  };
+
+  const sameDay = (a, b) => {
+    return a.getFullYear() === b.getFullYear() && a.getMonth() === b.getMonth() && a.getDate() === b.getDate();
+  };
+
+  const renderSelectedText = () => {
+    if (!selectedDate) {
+      calendarSelected.textContent = "Selected: --";
+      return;
+    }
+    calendarSelected.textContent = "Selected: " + toIsoDate(selectedDate);
+  };
+
+  const renderCalendar = () => {
+    const monthText = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(viewDate).toUpperCase();
+    calendarMonthLabel.textContent = monthText;
+
+    calendarGrid.innerHTML = "";
+
+    const year = viewDate.getFullYear();
+    const month = viewDate.getMonth();
+    const firstOfMonth = new Date(year, month, 1);
+    const startOffset = firstOfMonth.getDay();
+    const gridStart = new Date(year, month, 1 - startOffset);
+
+    for (let i = 0; i < 42; i += 1) {
+      const d = new Date(gridStart.getFullYear(), gridStart.getMonth(), gridStart.getDate() + i);
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "vv-cal-day";
+      btn.textContent = String(d.getDate());
+
+      if (d.getMonth() !== month) btn.classList.add("is-muted");
+      if (sameDay(d, todayOnly)) btn.classList.add("is-today");
+      if (selectedDate && sameDay(d, selectedDate)) btn.classList.add("is-selected");
+
+      btn.addEventListener("click", () => {
+        selectedDate = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+        projectStartDate.value = toIsoDate(selectedDate);
+        renderSelectedText();
+        renderCalendar();
+      });
+
+      calendarGrid.appendChild(btn);
+    }
+  };
 
   const openStep2 = function(){
     root.classList.add("is-step2-open");
@@ -316,10 +662,53 @@ export const CONTACT_SCRIPT = `(function(){
 
   const closeStep2 = function(){
     root.classList.remove("is-step2-open");
+    root.classList.remove("is-calendar-open");
+  };
+
+  const openCalendar = function(){
+    root.classList.add("is-calendar-open");
+    renderCalendar();
+  };
+
+  const closeCalendar = function(){
+    root.classList.remove("is-calendar-open");
   };
 
   closeBtn.addEventListener("click", closeStep2);
   dim.addEventListener("click", closeStep2);
+  startDateBtn.addEventListener("click", openCalendar);
+  calendarClose.addEventListener("click", closeCalendar);
+  calendarDim.addEventListener("click", closeCalendar);
+
+  calendarPrev.addEventListener("click", () => {
+    viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1);
+    renderCalendar();
+  });
+
+  calendarNext.addEventListener("click", () => {
+    viewDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1);
+    renderCalendar();
+  });
+
+  calendarToday.addEventListener("click", () => {
+    viewDate = new Date(todayOnly.getFullYear(), todayOnly.getMonth(), 1);
+    selectedDate = new Date(todayOnly.getFullYear(), todayOnly.getMonth(), todayOnly.getDate());
+    projectStartDate.value = toIsoDate(selectedDate);
+    renderSelectedText();
+    renderCalendar();
+  });
+
+  calendarClear.addEventListener("click", () => {
+    selectedDate = null;
+    projectStartDate.value = "";
+    renderSelectedText();
+    renderCalendar();
+  });
+
+  calendarApply.addEventListener("click", closeCalendar);
+
+  renderSelectedText();
+  renderCalendar();
 
   form.addEventListener("submit", function(e){
     e.preventDefault();
