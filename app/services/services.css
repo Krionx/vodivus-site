@@ -63,8 +63,8 @@
 #vv-services .vv-hero-copy{ max-width: 21ch; margin-top: 10px; text-align: center; margin-left: auto; margin-right: auto; }
 #vv-services .vv-block[aria-label="Services hero"] .vv-hero-copy{ grid-column: 1 / -1; grid-row: 2; max-width: none; width: 100%; }
 #vv-services .vv-hero-sub{ max-width: 70ch; margin-top: 14px; }
-#vv-services .vv-block[aria-label="Services hero"] .vv-hero-sub{ grid-column: 1; grid-row: 3; margin-top: 0; }
-#vv-services .vv-block[aria-label="Services hero"] .vv-cta-row{ grid-column: 2; grid-row: 3; margin-top: 0; justify-content: flex-end; align-self: end; }
+#vv-services .vv-block[aria-label="Services hero"] .vv-hero-sub{ grid-column: 1 / -1; grid-row: 3; margin-top: 0; max-width: none; width: 100%; text-align: justify; }
+#vv-services .vv-block[aria-label="Services hero"] .vv-cta-row{ grid-column: 1 / -1; grid-row: 4; margin-top: 6px; justify-content: flex-end; align-self: end; }
 
 #vv-services .vv-cta-row{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
 #vv-services .vv-cta{
@@ -285,10 +285,12 @@
 #vv-services .vv-expand-body p{ max-width: 56ch; }
 #vv-services .vv-expand-body ul{
   margin-top: 8px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
   text-align: left;
-  width: fit-content;
+  width: 100%;
+  max-width: 56ch;
+  padding-left: 1.25em;
 }
 #vv-services .vv-expand-body p,
 #vv-services .vv-expand-body ul{ animation: vv-expand-in .2s ease; }

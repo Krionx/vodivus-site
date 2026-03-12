@@ -133,7 +133,7 @@ export const SERVICES_HTML = String.raw`
   <div class="vv-shell">
     <section class="vv-block" aria-label="Services hero">
       <p class="vv-kicker">Structural Credibility</p>
-      <h1 class="vv-hero-copy">Services Designed to Hold Under Operational Load.</h1>
+      <h1 class="vv-hero-copy" style="font-size:72px; text-align:center;">Services Designed to Hold Under Pressure</h1>
       <p class="vv-hero-sub">Vodivus does not deliver vague strategy decks. We design executable operating structures: role logic, decision pathways, escalation mechanics, and handoff systems teams can run without heroics.</p>
       <div class="vv-cta-row">
         <a href="/contact" class="vv-cta vv-cta-primary">Start Intake -></a>
@@ -142,7 +142,7 @@ export const SERVICES_HTML = String.raw`
     </section>
 
     <section id="vv-service-lanes" class="vv-block" aria-label="Three services">
-      <h2>Three Service Lanes</h2>
+      <h2>Three Service Paths</h2>
       <div class="vv-lane-grid">
         <article class="vv-lane">
           <h3>Market and Positioning Architecture</h3>

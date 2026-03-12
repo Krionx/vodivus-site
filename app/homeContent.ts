@@ -121,7 +121,7 @@ export const HOME_HTML = String.raw`
 #vv-home .vv-hero-main{ min-width: 0; grid-column: 1 / -1; }
 #vv-home .vv-hero-copy{ max-width: none; width: 100%; margin: 12px auto; text-align: center; }
 #vv-home .vv-hero-sub{ max-width: 50ch; }
-#vv-home .vv-hero-side{ display: grid; gap: 10px; justify-items: end; align-self: end; margin-top: -156px; }
+#vv-home .vv-hero-side{ display: grid; gap: 10px; justify-items: end; align-self: end; margin-top: 32px; }
 #vv-home .vv-hero-note{ font-size: var(--vv-body-sm); color: rgba(198,226,251,.8); text-align: right; max-width: 50ch; }
 
 #vv-home .vv-cta-row{ display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
@@ -201,7 +201,7 @@ export const HOME_HTML = String.raw`
   text-align: center;
 }
 
-#vv-soulcrest{ padding: 26px 24px; position: relative; padding-top: 76px; }
+#vv-soulcrest{ padding: 26px 24px; position: relative; padding-top: 144px; }
 #vv-soulcrest h2{ position: absolute; top: 22px; right: 24px; text-align: right; }
 #vv-soulcrest .vv-muted{ position: absolute; top: 28px; left: 24px; margin-top: 0 !important; }
 #vv-soulcrest .vv-soul-btn{
@@ -292,7 +292,7 @@ export const HOME_HTML = String.raw`
   #vv-pressure .vv-preview::after{ content: "Tap to expand"; }
   #vv-pressure.is-open .vv-preview::after{ content: "Tap to collapse"; }
   #vv-pressure ul{ grid-template-columns: 1fr; }
-  #vv-soulcrest{ padding-top: 86px; }
+  #vv-soulcrest{ padding-top: 152px; }
   #vv-soulcrest h2{ top: 24px; right: 16px; }
   #vv-soulcrest .vv-muted{ top: 30px; left: 16px; }
   #vv-soulcrest .vv-soul-btn{ width: 100%; justify-content: space-between; font-size: var(--vv-rest); }
@@ -359,7 +359,7 @@ export const HOME_HTML = String.raw`
     </section>
 
     <section id="vv-lanes" class="vv-section vv-card" aria-label="Structured build paths">
-      <h2>Structured Build Paths</h2>
+      <h2 style="font-size:72px;">Structured Build Paths</h2>
       <p class="vv-muted" style="margin-top:8px; margin-bottom:14px; font-size:24px;">Choose the architecture lane that removes your current bottleneck.</p>
       <div class="vv-grid">
         <article class="vv-card vv-lane" aria-label="The Signal lane">
@@ -369,7 +369,6 @@ export const HOME_HTML = String.raw`
           <div class="vv-more">
             <p><strong>Solves:</strong> fuzzy messaging, weak offers, and unclear market fit.</p>
             <p><strong>Builds:</strong> positioning clarity, offer architecture, and high-signal language.</p>
-            <a class="vv-cta vv-cta-primary" href="/contact?lane=signal">Define the Signal -></a>
           </div>
         </article>
 
@@ -380,7 +379,6 @@ export const HOME_HTML = String.raw`
           <div class="vv-more">
             <p><strong>Solves:</strong> chaos, bottlenecks, and leadership drag.</p>
             <p><strong>Builds:</strong> workflows, accountability systems, and dependable delivery rhythm.</p>
-            <a class="vv-cta vv-cta-primary" href="/contact?lane=system">Strengthen the System -></a>
           </div>
         </article>
 
@@ -391,7 +389,6 @@ export const HOME_HTML = String.raw`
           <div class="vv-more">
             <p><strong>Solves:</strong> inconsistency and forgettable presence.</p>
             <p><strong>Builds:</strong> coherent identity across visuals, voice, and execution touchpoints.</p>
-            <a class="vv-cta vv-cta-primary" href="/contact?lane=signature">Refine the Signature -></a>
           </div>
         </article>
       </div>
@@ -414,9 +411,9 @@ export const HOME_HTML = String.raw`
     </section>
 
     <section id="vv-soulcrest" class="vv-section vv-card" aria-label="Soulcrest in development">
-      <h2>Soulcrest</h2>
-      <p class="vv-muted" style="margin-top:6px;">In Development</p>
-      <button class="vv-soul-btn" type="button" aria-expanded="false" aria-controls="vv-soul-panel"><span>SoulCrest is a next-generation ecosystem</span></button>
+      <h2 style="font-size:72px;">Soulcrest</h2>
+      <p class="vv-muted" style="margin-top:6px; font-size:24px;">In Development</p>
+      <button class="vv-soul-btn" type="button" aria-expanded="false" aria-controls="vv-soul-panel"><span style="font-size:36px;">SoulCrest is a next-generation ecosystem</span></button>
       <div id="vv-soul-panel" class="vv-soul-panel" hidden>
         <p>An architecture for identity, momentum, and meaningful connection. Soulcrest integrates digital systems with real-world participation.</p>
         <p style="margin-top:8px;">Built to create coherence where most platforms create fragmentation, it aligns growth, access, and community inside a deliberate framework.</p>

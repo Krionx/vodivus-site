@@ -6,7 +6,7 @@ export default function ServicesPage() {
       <div className="vv-shell">
           <section className="vv-block" aria-label="Services hero">
             <p className="vv-kicker">Structural Credibility</p>
-            <h1 className="vv-hero-copy">Services Designed to Hold Under Operational Load.</h1>
+            <h1 className="vv-hero-copy" style={{ fontSize: "72px", textAlign: "center" }}>Services Designed to Hold Under Pressure</h1>
             <p className="vv-hero-sub">Vodivus does not deliver vague strategy decks. We design executable operating structures: role logic, decision pathways, escalation mechanics, and handoff systems teams can run without heroics.</p>
             <div className="vv-cta-row">
               <a href="/contact" className="vv-cta vv-cta-primary">Start Intake -&gt;</a>
@@ -15,7 +15,7 @@ export default function ServicesPage() {
           </section>
 
           <section id="vv-service-lanes" className="vv-block" aria-label="Three services">
-            <h2>Three Service Lanes</h2>
+            <h2>Three Service Paths</h2>
             <div className="vv-lane-grid">
               <article className="vv-lane">
                 <input type="checkbox" id="vv-signal-expand" className="vv-expand-cb" />
