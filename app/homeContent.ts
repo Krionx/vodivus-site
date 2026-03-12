@@ -5,11 +5,12 @@ export const HOME_HTML = String.raw`
 #vv-home{
   --vv-max: 1200px;
   --vv-shell: min(var(--vv-max), calc(100vw - 36px));
-  --vv-title: clamp(46px, 6.1vw, 82px);
-  --vv-h2: clamp(30px, 3.6vw, 52px);
-  --vv-h3: clamp(22px, 2.1vw, 32px);
-  --vv-body: clamp(18px, 1.35vw, 23px);
-  --vv-body-sm: clamp(15px, 1.05vw, 18px);
+  --vv-title: 36px;
+  --vv-h2: 36px;
+  --vv-h3: 36px;
+  --vv-content: 36px;
+  --vv-rest: 18px;
+  --vv-body-sm: 18px;
   --vv-muted: rgba(235,244,255,.76);
   --vv-border: rgba(120,170,220,.42);
   --vv-glass: rgba(7,12,24,.56);
@@ -34,12 +35,18 @@ export const HOME_HTML = String.raw`
 #vv-home h2,
 #vv-home h3{ margin: 0; color: rgba(250,253,255,.98); letter-spacing: .02em; }
 #vv-home h1{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-title); line-height: 1.02; font-weight: 700; text-shadow: 0 0 24px rgba(112,190,255,.24); }
+#vv-home h1.vv-hero-copy{ font-size: 72px; }
 #vv-home h2{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-h2); line-height: 1.08; font-weight: 700; text-shadow: 0 0 18px rgba(112,190,255,.18); }
 #vv-home h3{ font-family: "Cinzel", serif; font-size: var(--vv-h3); line-height: 1.12; font-weight: 600; }
 #vv-home p,
-#vv-home li,
+#vv-home li{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-content); line-height: 1.45; }
 #vv-home span,
-#vv-home a{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-body); line-height: 1.45; }
+#vv-home a,
+#vv-home button,
+#vv-home label,
+#vv-home input,
+#vv-home textarea,
+#vv-home select{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-rest); line-height: 1.45; }
 #vv-home p{ margin: 0; color: rgba(238,246,255,.9); }
 #vv-home .vv-muted{ color: var(--vv-muted); }
 
@@ -122,6 +129,7 @@ export const HOME_HTML = String.raw`
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 36px;
   min-height: 46px;
   padding: 11px 16px;
   border-radius: 14px;
@@ -160,7 +168,7 @@ export const HOME_HTML = String.raw`
 #vv-lanes .vv-lane:focus-visible{ outline: none; border-color: rgba(173,222,255,.95); box-shadow: 0 0 0 2px rgba(173,222,255,.38), 0 0 34px rgba(110,194,255,.24); }
 #vv-lanes .vv-lane p{ margin-top: 10px; }
 #vv-lanes .vv-more{ display: block; max-height: 0; opacity: 0; overflow: hidden; transform: translateY(-6px); transition: max-height 320ms ease, opacity 220ms ease, transform 220ms ease; }
-#vv-lanes .vv-lane::after{ content: "Click to expand"; display: table; margin: 12px auto 0; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.62); font-size: 16px; color: rgba(224,242,255,.9); }
+#vv-lanes .vv-lane::after{ content: "Click to expand"; display: table; margin: 12px auto 0; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.62); font-size: 18px; color: rgba(224,242,255,.9); }
 #vv-lanes .vv-lane.is-open .vv-more{ max-height: 520px; opacity: 1; transform: translateY(0); }
 #vv-lanes .vv-lane.is-open::after{ content: "Click to collapse"; }
 #vv-lanes .vv-lane .vv-cta{ margin-top: 14px; }
@@ -168,7 +176,7 @@ export const HOME_HTML = String.raw`
 #vv-pressure{ padding: 26px 24px; cursor: pointer; transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease; }
 #vv-pressure:hover{ transform: translateY(-2px); border-color: rgba(147,210,255,.75); box-shadow: 0 22px 68px rgba(0,0,0,.66), 0 0 28px rgba(110,194,255,.2); }
 #vv-pressure .vv-more{ display: block; max-height: 0; overflow: hidden; opacity: 0; transform: translateY(-6px); transition: max-height 360ms ease, opacity 220ms ease, transform 220ms ease; margin-top: 0; }
-#vv-pressure .vv-preview::after{ content: "Click to expand"; display: table; margin: 12px auto 0; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.62); font-size: 16px; color: rgba(224,242,255,.9); }
+#vv-pressure .vv-preview::after{ content: "Click to expand"; display: table; margin: 12px auto 0; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.62); font-size: 18px; color: rgba(224,242,255,.9); }
 #vv-pressure.is-open .vv-more{ max-height: 460px; opacity: 1; transform: translateY(0); margin-top: 12px; }
 #vv-pressure.is-open .vv-preview::after{ content: "Click to collapse"; }
 #vv-pressure h2,
@@ -208,14 +216,14 @@ export const HOME_HTML = String.raw`
   border-radius: 14px;
   background: rgba(255,255,255,.08);
   color: rgba(240,248,255,.94);
-  font-size: 24px;
+  font-size: var(--vv-rest);
   cursor: pointer;
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
 }
 #vv-soulcrest .vv-soul-btn:hover{ transform: translateY(-2px); border-color: rgba(128,194,255,.75); box-shadow: 0 22px 68px rgba(0,0,0,.6), 0 0 32px rgba(110,194,255,.2); }
-#vv-soulcrest .vv-soul-btn::after{ content: "Click to expand"; display: block; font-size: 15px; margin-left: 8px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.6); }
+#vv-soulcrest .vv-soul-btn::after{ content: "Click to expand"; display: block; font-size: 18px; margin-left: 8px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.6); }
 #vv-soulcrest .vv-soul-panel{ display: block; max-height: 0; overflow: hidden; opacity: 0; transform: translateY(-6px); transition: max-height 360ms ease, opacity 240ms ease, transform 240ms ease; }
-#vv-soulcrest .vv-soul-collapse{ display: none; margin: 12px auto 0; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.62); color: rgba(224,242,255,.9); font-size: 16px; cursor: pointer; }
+#vv-soulcrest .vv-soul-collapse{ display: none; margin: 12px auto 0; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(163,214,255,.42); background: rgba(8,16,34,.62); color: rgba(224,242,255,.9); font-size: 18px; cursor: pointer; }
 #vv-soulcrest.is-open .vv-soul-btn{ display: none; }
 #vv-soulcrest.is-open .vv-soul-panel{ max-height: 600px; opacity: 1; transform: translateY(0); margin-top: 16px; }
 #vv-soulcrest.is-open .vv-soul-panel p{ text-align: center; max-width: 60ch; margin-left: auto; margin-right: auto; }
@@ -287,9 +295,9 @@ export const HOME_HTML = String.raw`
   #vv-soulcrest{ padding-top: 86px; }
   #vv-soulcrest h2{ top: 24px; right: 16px; }
   #vv-soulcrest .vv-muted{ top: 30px; left: 16px; }
-  #vv-soulcrest .vv-soul-btn{ width: 100%; justify-content: space-between; font-size: 20px; }
+  #vv-soulcrest .vv-soul-btn{ width: 100%; justify-content: space-between; font-size: var(--vv-rest); }
   #vv-soulcrest .vv-soul-btn::after{ content: "Tap to expand"; }
-  #vv-soulcrest .vv-soul-collapse{ font-size: 15px; }
+  #vv-soulcrest .vv-soul-collapse{ font-size: 18px; }
   #vv-soulcrest .vv-phase{ margin-left: 0; text-align: center; }
   #vv-soulcrest .vv-cta-row .vv-cta:nth-child(1),
   #vv-soulcrest .vv-cta-row .vv-cta:nth-child(2){ order: initial; margin: 0; }
@@ -337,7 +345,7 @@ export const HOME_HTML = String.raw`
     <div class="vv-hero-spacer" aria-hidden="true"></div>
     <section class="vv-hero" aria-label="Hero">
       <div class="vv-hero-main">
-        <p class="vv-hero-kicker">Venture Architecture Studio</p>
+        <p class="vv-hero-kicker" style="font-size:24px;">Venture Architecture Studio</p>
         <h1 class="vv-hero-copy">Dream Boldly. Build Intentionally.</h1>
         <p class="vv-hero-sub">Vodivus turns ambitious ideas into executable systems through clear positioning, resilient operations, and identity architecture that survives reality.</p>
       </div>
@@ -352,7 +360,7 @@ export const HOME_HTML = String.raw`
 
     <section id="vv-lanes" class="vv-section vv-card" aria-label="Structured build paths">
       <h2>Structured Build Paths</h2>
-      <p class="vv-muted" style="margin-top:8px; margin-bottom:14px;">Choose the architecture lane that removes your current bottleneck.</p>
+      <p class="vv-muted" style="margin-top:8px; margin-bottom:14px; font-size:24px;">Choose the architecture lane that removes your current bottleneck.</p>
       <div class="vv-grid">
         <article class="vv-card vv-lane" aria-label="The Signal lane">
           <h3>Market and Positioning Architecture</h3>
@@ -390,7 +398,7 @@ export const HOME_HTML = String.raw`
     </section>
 
     <section id="vv-pressure" class="vv-section vv-card" aria-label="Built under pressure">
-      <h2>Built Under Pressure</h2>
+      <h2 style="font-size:72px;">Built Under Pressure</h2>
       <div class="vv-preview">
         <p>Vodivus was forged in live environments where execution is public, timelines are unforgiving, and complexity is non-negotiable.</p>
         <div class="vv-more">

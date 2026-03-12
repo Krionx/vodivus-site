@@ -4,10 +4,11 @@ export const CONTACT_HTML = String.raw`
     #vv-contact{
       --vv-max: 1200px;
       --vv-shell: min(var(--vv-max), calc(100vw - 32px));
-      --vv-title: clamp(36px, 5.2vw, 64px);
-      --vv-h2: clamp(28px, 3.5vw, 44px);
-      --vv-h3: clamp(21px, 2.2vw, 30px);
-      --vv-body: clamp(18px, 1.3vw, 23px);
+      --vv-title: 36px;
+      --vv-h2: 36px;
+      --vv-h3: 36px;
+      --vv-content: 36px;
+      --vv-rest: 18px;
       --vv-border: rgba(123,183,235,.44);
       --vv-glass: rgba(8,14,28,.62);
       color: rgba(242,248,255,.96);
@@ -33,14 +34,14 @@ export const CONTACT_HTML = String.raw`
     #vv-contact h1{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-title); line-height: 1.05; text-shadow: 0 0 18px rgba(112,190,255,.2); }
     #vv-contact h2{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-h2); line-height: 1.1; }
     #vv-contact h3{ font-family: "Cinzel", serif; font-size: var(--vv-h3); line-height: 1.14; }
-    #vv-contact p,
+    #vv-contact p{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-content); line-height: 1.4; }
     #vv-contact label,
     #vv-contact input,
     #vv-contact textarea,
     #vv-contact select,
     #vv-contact button,
     #vv-contact a,
-    #vv-contact span{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-body); line-height: 1.4; }
+    #vv-contact span{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-rest); line-height: 1.4; }
     #vv-contact p{ margin: 0; color: rgba(232,243,255,.9); }
 
     #vv-contact .vv-block{
@@ -55,7 +56,7 @@ export const CONTACT_HTML = String.raw`
     }
     #vv-contact .vv-block + .vv-block{ margin-top: 18px; }
 
-    #vv-contact .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: clamp(14px, .95vw, 16px); color: rgba(193,224,251,.78); }
+    #vv-contact .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: var(--vv-rest); color: rgba(193,224,251,.78); }
     #vv-contact .vv-hero-copy{ max-width: 21ch; margin-top: 10px; }
     #vv-contact .vv-hero-sub{ max-width: 66ch; margin-top: 14px; }
 
@@ -78,9 +79,9 @@ export const CONTACT_HTML = String.raw`
     }
     #vv-contact .vv-next-note{
       color: rgba(200,226,250,.88);
-      font-size: clamp(16px, 1.15vw, 20px);
+      font-size: var(--vv-rest);
     }
-    #vv-contact .vv-field label{ color: rgba(205,229,252,.88); font-size: clamp(17px, 1.45vw, 21px); }
+    #vv-contact .vv-field label{ color: rgba(205,229,252,.88); font-size: var(--vv-rest); }
     #vv-contact .vv-field input,
     #vv-contact .vv-field textarea,
     #vv-contact .vv-field select{
@@ -101,6 +102,7 @@ export const CONTACT_HTML = String.raw`
     #vv-contact .vv-field textarea{ min-height: 120px; resize: vertical; }
 
     #vv-contact .vv-submit{
+      font-size: 36px;
       border: 1px solid rgba(123,198,255,.55);
       border-radius: 14px;
       min-height: 46px;
@@ -123,7 +125,7 @@ export const CONTACT_HTML = String.raw`
       background: rgba(8,16,34,.58);
       color: rgba(228,242,255,.92);
       padding: 9px 11px;
-      font-size: clamp(17px, 1.4vw, 20px);
+      font-size: var(--vv-rest);
     }
 
     #vv-contact .vv-step2-dim{
@@ -181,13 +183,14 @@ export const CONTACT_HTML = String.raw`
       border: 1px solid rgba(140,204,255,.46);
       background: rgba(255,255,255,.06);
       color: rgba(238,248,255,.96);
-      font-size: 24px;
+      font-size: 18px;
       line-height: 1;
       cursor: pointer;
     }
 
     #vv-contact .vv-step2-action{
       margin-top: 12px;
+      font-size: 36px;
       border: 1px solid rgba(123,198,255,.55);
       border-radius: 14px;
       min-height: 46px;
@@ -199,6 +202,42 @@ export const CONTACT_HTML = String.raw`
       transition: transform .18s ease, box-shadow .18s ease;
     }
     #vv-contact .vv-step2-action:hover{ transform: translateY(-2px); }
+
+    #vv-contact .vv-step2-nav{
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 12px;
+    }
+
+    #vv-contact .vv-step2-back,
+    #vv-contact .vv-step2-submit{
+      font-size: 36px;
+      min-height: 46px;
+      padding: 10px 16px;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    #vv-contact .vv-step2-back{
+      justify-self: start;
+      border: 1px solid rgba(140,204,255,.42);
+      background: rgba(255,255,255,.06);
+      color: rgba(236,247,255,.94);
+    }
+
+    #vv-contact .vv-step2-submit{
+      justify-self: end;
+      border: 1px solid rgba(123,198,255,.55);
+      background: linear-gradient(rgba(0,0,0,0) 8%, rgba(92,154,230,.68) 88%);
+      color: rgba(255,255,255,.96);
+      box-shadow: 0 12px 30px rgba(65,126,209,.34);
+    }
+
+    #vv-contact .vv-step2-back:hover,
+    #vv-contact .vv-step2-submit:hover{ transform: translateY(-2px); }
 
     #vv-contact .vv-calendar-dim{
       position: fixed;
@@ -228,7 +267,8 @@ export const CONTACT_HTML = String.raw`
         rgba(8,14,28,.94);
       box-shadow: 0 28px 70px rgba(0,0,0,.64), inset 0 1px 0 rgba(255,255,255,.08);
       padding: 16px;
-      transition: opacity .24s ease, transform .26s ease;
+      overflow: hidden;
+      transition: opacity .3s ease, transform .34s cubic-bezier(.2,.72,.08,1);
     }
 
     #vv-contact .vv-calendar-head{
@@ -243,7 +283,7 @@ export const CONTACT_HTML = String.raw`
     #vv-contact .vv-calendar-title{
       margin: 0;
       font-family: "Cinzel Decorative", serif;
-      font-size: clamp(24px, 2.8vw, 40px);
+      font-size: 36px;
       line-height: 1.04;
       letter-spacing: .02em;
       text-transform: uppercase;
@@ -251,7 +291,7 @@ export const CONTACT_HTML = String.raw`
     #vv-contact .vv-calendar-sub{
       margin: 6px 0 0;
       color: rgba(209,229,250,.86);
-      font-size: clamp(15px, 1.05vw, 18px);
+      font-size: 18px;
     }
 
     #vv-contact .vv-calendar-close{
@@ -261,14 +301,14 @@ export const CONTACT_HTML = String.raw`
       border: 1px solid rgba(140,204,255,.46);
       background: rgba(255,255,255,.06);
       color: rgba(238,248,255,.96);
-      font-size: 22px;
+      font-size: 18px;
       line-height: 1;
       cursor: pointer;
     }
 
     #vv-contact .vv-cal-toolbar{
       display: grid;
-      grid-template-columns: auto 1fr auto;
+      grid-template-columns: 40px minmax(0, 1fr) 40px;
       align-items: center;
       gap: 8px;
       margin-top: 6px;
@@ -281,12 +321,13 @@ export const CONTACT_HTML = String.raw`
       border: 1px solid rgba(140,204,255,.36);
       background: rgba(255,255,255,.05);
       color: rgba(238,248,255,.96);
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1;
       cursor: pointer;
     }
     #vv-contact .vv-cal-month-chip{
       min-height: 42px;
+      min-width: 0;
       border-radius: 14px;
       border: 1px solid rgba(140,204,255,.3);
       background: rgba(255,255,255,.04);
@@ -295,16 +336,24 @@ export const CONTACT_HTML = String.raw`
       justify-content: space-between;
       gap: 8px;
       padding: 6px 10px;
+      overflow: hidden;
     }
     #vv-contact .vv-cal-month-label{
       font-family: "Cinzel", serif;
-      font-size: clamp(22px, 1.75vw, 30px);
+      font-size: 24px;
       line-height: 1;
       text-transform: uppercase;
       color: rgba(232,244,255,.98);
       white-space: nowrap;
+      min-width: 0;
+      overflow: visible;
+      text-overflow: clip;
     }
-    #vv-contact .vv-cal-chip-row{ display: inline-flex; gap: 6px; }
+    #vv-contact .vv-cal-chip-row{
+      display: inline-flex;
+      gap: 6px;
+      flex-shrink: 0;
+    }
     #vv-contact .vv-cal-chip{
       min-height: 30px;
       padding: 3px 10px;
@@ -312,7 +361,7 @@ export const CONTACT_HTML = String.raw`
       border: 1px solid rgba(140,204,255,.34);
       background: rgba(255,255,255,.06);
       color: rgba(228,242,255,.95);
-      font-size: clamp(14px, .95vw, 16px);
+      font-size: 18px;
       cursor: pointer;
     }
 
@@ -329,7 +378,7 @@ export const CONTACT_HTML = String.raw`
     #vv-contact .vv-cal-weekday{
       text-align: center;
       color: rgba(182,212,241,.64);
-      font-size: clamp(12px, .9vw, 14px);
+      font-size: 18px;
       letter-spacing: .08em;
       text-transform: uppercase;
       font-family: "Cinzel", serif;
@@ -341,12 +390,12 @@ export const CONTACT_HTML = String.raw`
       background: rgba(255,255,255,.03);
       color: rgba(233,245,255,.95);
       font-family: "Cinzel", serif;
-      font-size: clamp(16px, 1.15vw, 20px);
+      font-size: 18px;
       line-height: 1;
       cursor: pointer;
-      transition: border-color .16s ease, background .16s ease, transform .16s ease;
+      transition: border-color .16s ease, background .16s ease, box-shadow .16s ease;
     }
-    #vv-contact .vv-cal-day:hover{ transform: translateY(-1px); border-color: rgba(155,209,255,.62); }
+    #vv-contact .vv-cal-day:hover{ border-color: rgba(155,209,255,.62); box-shadow: 0 0 0 1px rgba(155,209,255,.22) inset; }
     #vv-contact .vv-cal-day.is-muted{
       color: rgba(159,186,214,.42);
       background: rgba(0,0,0,.16);
@@ -370,7 +419,7 @@ export const CONTACT_HTML = String.raw`
     }
     #vv-contact .vv-cal-selected{
       color: rgba(204,228,250,.86);
-      font-size: clamp(14px, .95vw, 16px);
+      font-size: 18px;
       letter-spacing: .08em;
       text-transform: uppercase;
       font-family: "Cinzel", serif;
@@ -383,7 +432,7 @@ export const CONTACT_HTML = String.raw`
       background: linear-gradient(rgba(0,0,0,0) 8%, rgba(92,154,230,.66) 88%);
       color: rgba(255,255,255,.96);
       font-family: "Cinzel Decorative", serif;
-      font-size: clamp(18px, 1.2vw, 24px);
+      font-size: 18px;
       cursor: pointer;
     }
 
@@ -431,7 +480,7 @@ export const CONTACT_HTML = String.raw`
       #vv-contact .vv-submit{ width: 100%; min-height: 44px; }
       #vv-contact .vv-field input,
       #vv-contact .vv-field select,
-      #vv-contact .vv-field textarea{ font-size: max(16px, var(--vv-body)); }
+      #vv-contact .vv-field textarea{ font-size: max(16px, var(--vv-rest)); }
     }
 
     @media (max-width: 480px){
@@ -449,6 +498,9 @@ export const CONTACT_HTML = String.raw`
       #vv-contact{ --vv-shell: min(var(--vv-max), calc(100vw - 10px)); }
       #vv-contact .vv-submit-row{ grid-template-columns: 1fr; }
       #vv-contact .vv-submit{ min-height: 44px; }
+      #vv-contact .vv-step2-nav{ grid-template-columns: 1fr; }
+      #vv-contact .vv-step2-back,
+      #vv-contact .vv-step2-submit{ justify-self: stretch; }
     }
   </style>
 
@@ -531,6 +583,10 @@ export const CONTACT_HTML = String.raw`
         </select>
       </div>
       <button id="vv-step2-start-date" class="vv-step2-action" type="button">Project start date</button>
+      <div class="vv-step2-nav">
+        <button id="vv-step2-back" class="vv-step2-back" type="button">Back</button>
+        <button id="vv-step2-submit" class="vv-step2-submit" type="button">Submit</button>
+      </div>
     </section>
 
     <button class="vv-calendar-dim" id="vv-calendar-dim" type="button" aria-label="Close calendar"></button>
@@ -591,12 +647,14 @@ export const CONTACT_SCRIPT = `(function(){
   const calendarToday = document.getElementById("vv-cal-today");
   const calendarClear = document.getElementById("vv-cal-clear");
   const calendarApply = document.getElementById("vv-cal-apply");
+  const step2Back = document.getElementById("vv-step2-back");
+  const step2Submit = document.getElementById("vv-step2-submit");
   const calendarGrid = document.getElementById("vv-cal-grid");
   const calendarMonthLabel = document.getElementById("vv-cal-month-label");
   const calendarSelected = document.getElementById("vv-cal-selected");
   const projectStartDate = document.getElementById("vv-project-start-date");
 
-  if (!root || !form || !status || !closeBtn || !dim || !startDateBtn || !calendarDim || !calendarClose || !calendarPrev || !calendarNext || !calendarToday || !calendarClear || !calendarApply || !calendarGrid || !calendarMonthLabel || !calendarSelected || !projectStartDate) return;
+  if (!root || !form || !status || !closeBtn || !dim || !startDateBtn || !calendarDim || !calendarClose || !calendarPrev || !calendarNext || !calendarToday || !calendarClear || !calendarApply || !step2Back || !step2Submit || !calendarGrid || !calendarMonthLabel || !calendarSelected || !projectStartDate) return;
 
   const today = new Date();
   const todayOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
@@ -623,7 +681,7 @@ export const CONTACT_SCRIPT = `(function(){
   };
 
   const renderCalendar = () => {
-    const monthText = new Intl.DateTimeFormat("en-US", { month: "long", year: "numeric" }).format(viewDate).toUpperCase();
+    const monthText = new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(viewDate).toUpperCase();
     calendarMonthLabel.textContent = monthText;
 
     calendarGrid.innerHTML = "";
@@ -706,6 +764,12 @@ export const CONTACT_SCRIPT = `(function(){
   });
 
   calendarApply.addEventListener("click", closeCalendar);
+  step2Back.addEventListener("click", closeStep2);
+  step2Submit.addEventListener("click", function(){
+    closeStep2();
+    status.style.display = "block";
+    status.textContent = "Step 2 submitted. We'll route your intake and follow up with next actions.";
+  });
 
   renderSelectedText();
   renderCalendar();

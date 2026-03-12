@@ -1,10 +1,11 @@
 #vv-services{
   --vv-max: 1200px;
   --vv-shell: min(var(--vv-max), calc(100vw - 32px));
-  --vv-title: clamp(36px, 5.2vw, 66px);
-  --vv-h2: clamp(28px, 3.4vw, 44px);
-  --vv-h3: clamp(21px, 2.2vw, 30px);
-  --vv-body: clamp(18px, 1.3vw, 23px);
+  --vv-title: 36px;
+  --vv-h2: 36px;
+  --vv-h3: 36px;
+  --vv-content: 36px;
+  --vv-rest: 18px;
   --vv-border: rgba(123,183,235,.44);
   --vv-glass: rgba(8,14,28,.62);
   color: rgba(242,248,255,.96);
@@ -26,10 +27,15 @@
 #vv-services h2{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-h2); line-height: 1.1; }
 #vv-services h3{ font-family: "Cinzel", serif; font-size: var(--vv-h3); line-height: 1.14; }
 #vv-services p,
-#vv-services li,
+#vv-services li{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-content); line-height: 1.42; }
 #vv-services a,
 #vv-services span,
-#vv-services b{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-body); line-height: 1.42; }
+#vv-services b,
+#vv-services button,
+#vv-services label,
+#vv-services input,
+#vv-services textarea,
+#vv-services select{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-rest); line-height: 1.42; }
 #vv-services p{ margin: 0; color: rgba(232,243,255,.9); }
 #vv-services ul{ margin: 10px 0 0 18px; padding: 0; color: rgba(221,235,252,.88); }
 
@@ -45,7 +51,7 @@
 }
 #vv-services .vv-block + .vv-block{ margin-top: 18px; }
 
-#vv-services .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: clamp(14px, .95vw, 16px); color: rgba(193,224,251,.78); }
+#vv-services .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: var(--vv-rest); color: rgba(193,224,251,.78); }
 #vv-services .vv-block[aria-label="Services hero"]{
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -65,6 +71,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 36px;
   min-height: 46px;
   padding: 10px 16px;
   border-radius: 14px;
@@ -194,7 +201,7 @@
 #vv-services .vv-artifacts-grid .vv-artifact-modal h4{
   margin: 10px 0 4px;
   font-family: "Cinzel", serif;
-  font-size: clamp(16px, 1.2vw, 18px);
+  font-size: 24px;
   line-height: 1.2;
   color: rgba(238,246,255,.95);
 }
@@ -326,7 +333,7 @@
   border: 1px solid rgba(123,183,235,.44);
   background: rgba(255,255,255,.06);
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(14px, .95vw, 16px);
+  font-size: 18px;
   color: rgba(193,224,251,.85);
   transition: background .18s ease, border-color .18s ease;
 }
@@ -346,7 +353,7 @@
 #vv-services .vv-process{ margin-top: 8px; }
 #vv-services .vv-steps{ display: grid; gap: 12px; margin-top: 14px; }
 #vv-services .vv-step{ border: 1px solid rgba(120,170,220,.36); border-radius: 16px; padding: 14px; background: rgba(255,255,255,.03); }
-#vv-services .vv-step b{ display: block; font-family: "Cinzel", serif; font-size: clamp(17px, 2vw, 20px); margin-bottom: 4px; }
+#vv-services .vv-step b{ display: block; font-family: "Cinzel", serif; font-size: 24px; margin-bottom: 4px; }
 
 #vv-services .vv-final-cta p{ max-width: 58ch; margin-top: 10px; }
 

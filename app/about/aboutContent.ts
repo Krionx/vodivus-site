@@ -4,10 +4,11 @@ export const ABOUT_HTML = String.raw`
     #vv-about{
       --vv-max: 1200px;
       --vv-shell: min(var(--vv-max), calc(100vw - 32px));
-      --vv-title: clamp(36px, 5.1vw, 64px);
-      --vv-h2: clamp(28px, 3.4vw, 44px);
-      --vv-h3: clamp(21px, 2.2vw, 30px);
-      --vv-body: clamp(18px, 1.3vw, 23px);
+      --vv-title: 36px;
+      --vv-h2: 36px;
+      --vv-h3: 36px;
+      --vv-content: 36px;
+      --vv-rest: 18px;
       --vv-border: rgba(123,183,235,.44);
       --vv-glass: rgba(8, 14, 28, .62);
       color: rgba(242,248,255,.96);
@@ -45,10 +46,15 @@ export const ABOUT_HTML = String.raw`
     #vv-about h2{ font-family: "Cinzel Decorative", serif; font-size: var(--vv-h2); line-height: 1.1; }
     #vv-about h3{ font-family: "Cinzel", serif; font-size: var(--vv-h3); line-height: 1.14; }
     #vv-about p,
-    #vv-about li,
+    #vv-about li{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-content); line-height: 1.42; }
     #vv-about a,
     #vv-about span,
-    #vv-about b{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-body); line-height: 1.42; }
+    #vv-about b,
+    #vv-about button,
+    #vv-about label,
+    #vv-about input,
+    #vv-about textarea,
+    #vv-about select{ font-family: "Cormorant Garamond", serif; font-size: var(--vv-rest); line-height: 1.42; }
     #vv-about p{ margin: 0; color: rgba(232,243,255,.9); }
 
     #vv-about .vv-block{
@@ -63,7 +69,7 @@ export const ABOUT_HTML = String.raw`
     }
     #vv-about .vv-block + .vv-block{ margin-top: 18px; }
 
-    #vv-about .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: clamp(14px, .95vw, 16px); color: rgba(193,224,251,.78); }
+    #vv-about .vv-kicker{ text-transform: uppercase; letter-spacing: .14em; font-size: var(--vv-rest); color: rgba(193,224,251,.78); }
     #vv-about .vv-hero-copy{ max-width: none; width: 100%; margin: 10px auto 0; text-align: center; }
     #vv-about .vv-hero-sub{ max-width: 60ch; margin: 14px auto 0; text-align: center; }
 
@@ -87,7 +93,7 @@ export const ABOUT_HTML = String.raw`
       display: grid;
       place-items: center;
       color: rgba(205,232,255,.78);
-      font-size: clamp(16px, 1.1vw, 18px);
+      font-size: var(--vv-rest);
       letter-spacing: .05em;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -123,7 +129,7 @@ export const ABOUT_HTML = String.raw`
       background: rgba(255,255,255,.06);
       color: rgba(238,248,255,.96);
       font-family: "Cinzel", serif;
-      font-size: 18px;
+      font-size: var(--vv-rest);
       cursor: pointer;
     }
     #vv-about .vv-team-dots{ display: inline-flex; align-items: center; gap: 8px; }
@@ -147,6 +153,7 @@ export const ABOUT_HTML = String.raw`
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      font-size: 36px;
       min-height: 46px;
       padding: 10px 16px;
       border-radius: 14px;
